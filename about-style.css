@@ -107,7 +107,20 @@
       position: relative;
       overflow: hidden;
     }
-    
+    .badge-mini {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(56, 200, 232, 0.1);
+      border: 1px solid rgba(56, 200, 232, 0.3);
+      border-radius: 40px;
+      padding: 0.35rem 0.9rem 0.35rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--light-cyan);
+      backdrop-filter: blur(4px);
+    }
 
    
     
