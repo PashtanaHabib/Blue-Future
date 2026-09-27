@@ -1052,5 +1052,37 @@
     }
 
 
+    .nav-link {
+    position: relative;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #0878b8;
+}
+
+.nav-link.active {
+    color: #0878b8;
+}
+
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #0878b8;
+    border-radius: 10px;
+}
+
+
    
     
