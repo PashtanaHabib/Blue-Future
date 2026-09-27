@@ -9,7 +9,7 @@ This project was created as a **group practice project** to apply and improve ou
 
 ## 🚀 Live Demo
 
-🔗 **[View Live Demo](YOUR-LIVE-DEMO-LINK)**
+🔗 **[View Live Demo]([YOUR-LIVE-DEMO-LINK](https://pashtanahabib.github.io/Blue-Future/))**
 
 ---
 
