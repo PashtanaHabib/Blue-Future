@@ -2817,3 +2817,122 @@ a {
     background: #0878b8;
     border-radius: 10px;
 }
+
+
+
+
+
+/* =================================
+   DARK MODE
+================================= */
+
+html.darkmode body {
+    background: #081521;
+    color: #f1f5f9;
+}
+
+/* Sections */
+
+html.darkmode .water-slider-section,
+html.darkmode .how-section,
+html.darkmode .stats-section,
+html.darkmode .cta-section {
+    background: #081521;
+}
+
+
+/* Water Slider */
+
+html.darkmode .water-slider-section {
+    background: linear-gradient(
+        135deg,
+        #071b2b,
+        #081521
+    );
+}
+
+html.darkmode .water-section-title h2 {
+    color: #f8fafc;
+}
+
+html.darkmode .water-section-title p {
+    color: #94a3b8;
+}
+
+
+/* Cards */
+
+html.darkmode .water-card {
+    background: #102536;
+    border-color: #1e4055;
+    box-shadow: 0 15px 45px rgba(0,0,0,.25);
+}
+
+html.darkmode .water-card h3 {
+    color: #f8fafc;
+}
+
+html.darkmode .water-card p {
+    color: #9fb3c1;
+}
+
+
+/* How it works */
+
+html.darkmode .how-section h2 {
+    color: #f8fafc;
+}
+
+html.darkmode .how-section p {
+    color: #94a3b8;
+}
+
+html.darkmode .step {
+    border-color: #1e4055;
+}
+
+html.darkmode .step h5 {
+    color: #f8fafc;
+}
+
+
+/* Navigation */
+
+html.darkmode nav {
+    background: rgba(3, 21, 37, .8);
+    border-color: rgba(255,255,255,.15);
+}
+
+
+/* Footer */
+
+html.darkmode footer {
+    background: #050e17;
+    border-color: #183247;
+}
+
+html.darkmode .footer-col h4 {
+    color: #f8fafc;
+}
+
+html.darkmode .footer-col p {
+    color: #94a3b8;
+}
+
+html.darkmode .footer-col ul li a {
+    color: #7dd3fc;
+}
+
+html.darkmode .footer-bottom {
+    border-color: #183247;
+    color: #64748b;
+}
+
+
+/* Theme Button */
+
+html.darkmode .theme-btn {
+    background: rgba(255,255,255,.08);
+    border-color: rgba(255,255,255,.15);
+    color: white;
+}
