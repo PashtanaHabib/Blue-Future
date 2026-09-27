@@ -1,3 +1,17 @@
+/* root */
+:root {
+  --dark-bg: #080E15;
+  --deep-navy: #0A1D2E;
+  --dark-blue: #0C2C3F;
+  --petrol-blue: #173D50;
+  --primary-blue: #207DA9;
+  --light-blue: #2694C3;
+  --cyan-blue: #36AED5;
+  --blue-gray: #84A1AF;
+  --very-light-blue: #9FD0E7;
+  --lightest-blue: #CBE6EE;
+}
+
 /* =====================================
    PAGE LAYOUT
 ===================================== */
