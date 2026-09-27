@@ -1083,6 +1083,469 @@
     border-radius: 10px;
 }
 
+/* root */
+:root {
+  --dark-bg: #080E15;
+  --deep-navy: #0A1D2E;
+  --dark-blue: #0C2C3F;
+  --petrol-blue: #173D50;
+  --primary-blue: #207DA9;
+  --light-blue: #2694C3;
+  --cyan-blue: #36AED5;
+  --blue-gray: #84A1AF;
+  --very-light-blue: #9FD0E7;
+  --lightest-blue: #CBE6EE;
+
+   /* 🔤 FONTS */
+  --font-main: "Fisherman", sans-serif;
+}
+
+/* =====================================
+   PAGE LAYOUT
+===================================== */
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #444c63;
+}
+
+main {
+    flex: 1;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 35px;
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+}
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+
+header img{
+    width: 40px;
+    height: 45px;
+}
+.melting-text-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo {
+    font-family: Fisherman;
+}
+
+.melting-text {
+    position: relative;
+
+    margin: 0;
+
+    font-family: Fisherman;
+    font-size: 2rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        90deg,
+        #61b8ff,
+        #1a3ea1,
+        #4c81e2
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation: melt 3s ease-in-out infinite;
+}
+
+
+/* =====================================
+   MELTING EFFECT
+===================================== */
+
+.melting-text::before,
+.melting-text::after {
+    content: "BLUE FUTURE";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #4c81e2,
+        #464f9e,
+        #4b7ae0
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    pointer-events: none;
+
+    transform-origin: top center;
+
+    z-index: -1;
+
+    animation: drip 3s ease-in-out infinite;
+}
+
+
+/* =====================================
+   BLUR EFFECT
+===================================== */
+
+.melting-text::after {
+    filter: blur(6px);
+    opacity: 0.25;
+    z-index: -2;
+}
+
+
+/* =====================================
+   MELT ANIMATION
+===================================== */
+
+@keyframes melt {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+
+/* =====================================
+   DRIP ANIMATION
+===================================== */
+
+@keyframes drip {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scaleY(1.15);
+        opacity: 0.7;
+    }
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    padding: 8px 15px;
+
+    border: 1px solid #ffffff75;
+    border-radius: 50px;
+
+    background: #ffffff2f;
+
+    box-shadow: 5px 5px 12px #c4d6f035;
+
+    backdrop-filter: blur(4px);
+
+    font-family: Fisherman;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 15px;
+
+    font-size: 18px;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #bdefff;
+}
+
+
+/* =====================================
+   HEADER TITLE
+===================================== */
+
+.header-text {
+    font-family: Fisherman;
+    font-size: 12px;
+}
+
+.header-text h1 {
+    margin: 0;
+}
+
+/* =====================================
+   THEME BUTTON
+===================================== */
+
+.theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+
+    font-family: Fisherman;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+
+    transition: 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+#theme-icon {
+    font-size: 17px;
+}
+
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+    margin: 0;
+    background-color: #444c63;
+}
+
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    position: relative;
+    z-index: 2;
+
+    padding: 50px 6vw 25px;
+    margin-top: 20px;
+
+    background: #eaf4ff;
+
+    border-top: 1px solid #c9dff5;
+}
+
+
+/* =====================================
+   FOOTER IMAGE
+===================================== */
+
+footer img {
+    width: 40px;
+    height: 45px;
+    object-fit: contain;
+}
+
+
+/* =====================================
+   FOOTER GRID
+===================================== */
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 36px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================
+   FOOTER TITLES
+===================================== */
+
+.footer-col h4 {
+    margin-bottom: 14px;
+
+    font-size: 1rem;
+
+    color: #123b68;
+}
+
+
+/* =====================================
+   FOOTER TEXT
+===================================== */
+
+.footer-col p {
+    color: #54708c;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   FOOTER LIST
+===================================== */
+
+.footer-col ul {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+
+/* =====================================
+   FOOTER LIST ITEMS
+===================================== */
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+
+/* =====================================
+   FOOTER LINKS
+===================================== */
+
+.footer-col ul li a {
+    display: inline-block;
+
+    color: #2c6fae;
+
+    font-size: 0.9rem;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =====================================
+   LINK HOVER
+===================================== */
+
+.footer-col ul li a:hover {
+    color: #0b4f91;
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================
+   FOOTER BOTTOM
+===================================== */
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    max-width: 1100px;
+
+    margin: 36px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #c9dff5;
+
+    color: #71879b;
+
+    font-size: 0.82rem;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 720px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .footer-col ul li a:hover {
+        transform: translateY(-2px);
+    }
+}
+
 
    
     
