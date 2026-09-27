@@ -58,6 +58,27 @@
         radial-gradient(circle at 50% 95%, rgba(6, 59, 99, 0.3) 0%, transparent 60%);
       pointer-events: none;
     }
-    
+
+     .particles {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(155, 231, 245, 0.4);
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.4; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
    
     
