@@ -15,8 +15,8 @@
     if (savedTheme === "dark") {
         html.classList.add("darkmode");
 
-        themeIcon.textContent = "☾";
-        themeText.textContent = "Dark";
+        themeIcon.textContent = "☀";
+        themeText.textContent = "Light";
     }
 
 
@@ -33,8 +33,8 @@
 
         if (html.classList.contains("darkmode")) {
 
-            themeIcon.textContent = "☾";
-            themeText.textContent = "Dark";
+            themeIcon.textContent = "☀";
+            themeText.textContent = "Light";
 
             localStorage.setItem(
                 "blue-future-theme",
@@ -43,8 +43,8 @@
 
         } else {
 
-            themeIcon.textContent = "☀";
-            themeText.textContent = "Light";
+            themeIcon.textContent = "☾";
+            themeText.textContent = "Dark";
 
             localStorage.setItem(
                 "blue-future-theme",
