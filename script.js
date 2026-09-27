@@ -1,6 +1,12 @@
-/* ==========================================
+/* =====================================================
+   BLUE FUTURE
+   HOME PAGE JAVASCRIPT
+===================================================== */
+
+
+/* =====================================================
    LIGHT / DARK MODE
-========================================== */
+===================================================== */
 
 const themeBtn = document.getElementById("theme-btn");
 const themeIcon = document.getElementById("theme-icon");
@@ -8,24 +14,16 @@ const themeText = document.getElementById("theme-text");
 
 const html = document.documentElement;
 
+
 /* Load saved theme */
-const savedTheme = localStorage.getItem("blue-future-theme");
+
+const savedTheme =
+    localStorage.getItem("blue-future-theme");
+
 
 if (savedTheme === "dark") {
 
     html.classList.add("darkmode");
-
-    if (themeIcon) {
-        themeIcon.textContent = "☀";
-    }
-
-    if (themeText) {
-        themeText.textContent = " Light";
-    }
-
-} else {
-
-    html.classList.remove("darkmode");
 
     if (themeIcon) {
         themeIcon.textContent = "☾";
@@ -34,15 +32,30 @@ if (savedTheme === "dark") {
     if (themeText) {
         themeText.textContent = "Dark";
     }
+
+} else {
+
+    html.classList.remove("darkmode");
+
+    if (themeIcon) {
+        themeIcon.textContent = "☀";
+    }
+
+    if (themeText) {
+        themeText.textContent = "Light";
+    }
+
 }
 
 
 /* Toggle theme */
+
 if (themeBtn) {
 
     themeBtn.addEventListener("click", () => {
 
         html.classList.toggle("darkmode");
+
 
         if (html.classList.contains("darkmode")) {
 
@@ -80,81 +93,92 @@ if (themeBtn) {
 
 }
 
-    /* =====================================================
-   BLUE FUTURE
-   HOME PAGE JAVASCRIPT
+
+/* =====================================================
+   NAVBAR SCROLL EFFECT
 ===================================================== */
 
-
-/* ==========================================
-   NAVBAR SCROLL EFFECT
-========================================== */
-const navbar = document.querySelector(".navbar");
+const navbar =
+    document.querySelector(".navbar");
 
 
-window.addEventListener("scroll", () => {
+if (navbar) {
 
-    if (window.scrollY > 50) {
+    window.addEventListener("scroll", () => {
 
-        navbar.classList.add("scrolled");
+        if (window.scrollY > 50) {
 
-    } else {
+            navbar.classList.add("scrolled");
 
-        navbar.classList.remove("scrolled");
+        } else {
 
-    }
+            navbar.classList.remove("scrolled");
 
-});
+        }
+
+    });
+
+}
 
 
-
-/* ==========================================
+/* =====================================================
    SCROLL REVEAL
-========================================== */
+===================================================== */
 
 const revealElements =
     document.querySelectorAll(".reveal");
 
 
-const revealObserver =
-    new IntersectionObserver(
+if ("IntersectionObserver" in window) {
 
-        (entries) => {
+    const revealObserver =
+        new IntersectionObserver(
 
-            entries.forEach((entry) => {
+            (entries) => {
 
-                if (entry.isIntersecting) {
+                entries.forEach((entry) => {
 
-                    entry.target.classList.add("show");
+                    if (entry.isIntersecting) {
 
-                    revealObserver.unobserve(
-                        entry.target
-                    );
+                        entry.target.classList.add("show");
 
-                }
+                        revealObserver.unobserve(
+                            entry.target
+                        );
 
-            });
+                    }
 
-        },
+                });
 
-        {
-            threshold: 0.12
-        }
+            },
 
-    );
+            {
+                threshold: 0.12
+            }
 
-
-revealElements.forEach((element) => {
-
-    revealObserver.observe(element);
-
-});
+        );
 
 
+    revealElements.forEach((element) => {
 
-/* ==========================================
+        revealObserver.observe(element);
+
+    });
+
+} else {
+
+    revealElements.forEach((element) => {
+
+        element.classList.add("show");
+
+    });
+
+}
+
+
+/* =====================================================
    COUNTER ANIMATION
-========================================== */
+===================================================== */
 
 const counters =
     document.querySelectorAll(".counter");
@@ -175,9 +199,12 @@ function startCounters() {
         const target =
             Number(counter.dataset.target);
 
+
         let current = 0;
 
+
         const duration = 1800;
+
 
         const increment =
             target / (duration / 16);
@@ -192,6 +219,7 @@ function startCounters() {
 
                 counter.textContent =
                     Math.floor(current);
+
 
                 requestAnimationFrame(
                     updateCounter
@@ -214,46 +242,49 @@ function startCounters() {
 }
 
 
-
-/* Detect stats section */
+/* Stats section */
 
 const statsSection =
     document.querySelector(".stats-section");
 
 
-const statsObserver =
-    new IntersectionObserver(
+if (
+    statsSection &&
+    "IntersectionObserver" in window
+) {
 
-        (entries) => {
+    const statsObserver =
+        new IntersectionObserver(
 
-            if (entries[0].isIntersecting) {
+            (entries) => {
 
-                startCounters();
+                if (
+                    entries[0].isIntersecting
+                ) {
 
-                statsObserver.disconnect();
+                    startCounters();
 
+                    statsObserver.disconnect();
+
+                }
+
+            },
+
+            {
+                threshold: 0.3
             }
 
-        },
+        );
 
-        {
-            threshold: 0.3
-        }
-
-    );
-
-
-if (statsSection) {
 
     statsObserver.observe(statsSection);
 
 }
 
 
-
-/* ==========================================
+/* =====================================================
    HERO ORB MOUSE PARALLAX
-========================================== */
+===================================================== */
 
 const heroVisual =
     document.querySelector(".hero-visual");
@@ -317,10 +348,9 @@ if (heroVisual && orb) {
 }
 
 
-
-/* ==========================================
+/* =====================================================
    ACTIVE NAVIGATION
-========================================== */
+===================================================== */
 
 const navLinks =
     document.querySelectorAll(
@@ -349,19 +379,14 @@ navLinks.forEach((link) => {
 });
 
 
-
-/* ==========================================
-   CLOSE MOBILE NAVBAR AFTER CLICK
-========================================== */
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
 
 const mobileLinks =
     document.querySelectorAll(
-        ".blue-navbar .nav-link"
+        ".navbar .nav-link"
     );
-
-
-const navbarCollapse =
-    document.querySelector("#mainNav");
 
 
 mobileLinks.forEach((link) => {
@@ -370,20 +395,30 @@ mobileLinks.forEach((link) => {
         "click",
         () => {
 
-            if (
-                window.innerWidth < 992 &&
-                navbarCollapse.classList.contains("show")
-            ) {
+            if (window.innerWidth < 992) {
 
-                const bsCollapse =
-                    bootstrap.Collapse.getInstance(
-                        navbarCollapse
+                const navbarCollapse =
+                    document.querySelector(
+                        "#mainNav"
                     );
 
 
-                if (bsCollapse) {
+                if (
+                    navbarCollapse &&
+                    navbarCollapse.classList.contains("show")
+                ) {
 
-                    bsCollapse.hide();
+                    const bsCollapse =
+                        bootstrap.Collapse.getInstance(
+                            navbarCollapse
+                        );
+
+
+                    if (bsCollapse) {
+
+                        bsCollapse.hide();
+
+                    }
 
                 }
 
@@ -395,10 +430,9 @@ mobileLinks.forEach((link) => {
 });
 
 
-
-/* ==========================================
+/* =====================================================
    CURRENT YEAR
-========================================== */
+===================================================== */
 
 const year =
     document.querySelector("#year");
@@ -412,10 +446,9 @@ if (year) {
 }
 
 
-
-/* ==========================================
+/* =====================================================
    SMOOTH ANCHOR SCROLL
-========================================== */
+===================================================== */
 
 document.querySelectorAll(
     'a[href^="#"]'
@@ -430,6 +463,7 @@ document.querySelectorAll(
 
 
             if (
+                !targetId ||
                 targetId === "#" ||
                 targetId.length < 2
             ) {
@@ -440,7 +474,9 @@ document.querySelectorAll(
 
 
             const target =
-                document.querySelector(targetId);
+                document.querySelector(
+                    targetId
+                );
 
 
             if (!target) return;
@@ -450,13 +486,15 @@ document.querySelectorAll(
 
 
             const navbarHeight =
-                navbar.offsetHeight;
+                navbar
+                    ? navbar.offsetHeight
+                    : 0;
 
 
             const targetPosition =
-                target.getBoundingClientRect().top
-                + window.scrollY
-                - navbarHeight;
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                navbarHeight;
 
 
             window.scrollTo({
@@ -472,13 +510,10 @@ document.querySelectorAll(
 
 });
 
-const navbarHeight = navbar.offsetHeight;
 
-
-
-/* ==========================================
+/* =====================================================
    BUTTON RIPPLE EFFECT
-========================================== */
+===================================================== */
 
 document.querySelectorAll(
     ".btn-primary-water, .btn-outline-water, .btn-light-water, .btn-water"
@@ -506,29 +541,38 @@ document.querySelectorAll(
             ripple.style.width =
                 `${size}px`;
 
+
             ripple.style.height =
                 `${size}px`;
+
 
             ripple.style.position =
                 "absolute";
 
+
             ripple.style.left =
                 `${event.clientX - rect.left - size / 2}px`;
+
 
             ripple.style.top =
                 `${event.clientY - rect.top - size / 2}px`;
 
+
             ripple.style.borderRadius =
                 "50%";
+
 
             ripple.style.background =
                 "rgba(255,255,255,.25)";
 
+
             ripple.style.transform =
                 "scale(0)";
 
+
             ripple.style.pointerEvents =
                 "none";
+
 
             ripple.style.animation =
                 "ripple .6s ease-out";
@@ -536,6 +580,7 @@ document.querySelectorAll(
 
             this.style.position =
                 "relative";
+
 
             this.style.overflow =
                 "hidden";
@@ -556,7 +601,7 @@ document.querySelectorAll(
 });
 
 
-/* Ripple animation */
+/* Ripple Animation */
 
 const rippleStyle =
     document.createElement("style");
@@ -581,6 +626,7 @@ rippleStyle.innerHTML = `
 
 document.head.appendChild(rippleStyle);
 
+
 /* =====================================================
    IMPACT CARDS SLIDER
 ===================================================== */
@@ -588,11 +634,14 @@ document.head.appendChild(rippleStyle);
 const impactSlider =
     document.getElementById("impactSlider");
 
+
 const prevSlide =
     document.getElementById("prevSlide");
 
+
 const nextSlide =
     document.getElementById("nextSlide");
+
 
 const sliderDots =
     document.getElementById("sliderDots");
@@ -616,10 +665,6 @@ if (
     let slidesPerView = 3;
 
 
-    /* --------------------------------
-       Detect screen size
-    -------------------------------- */
-
     function updateSlidesPerView() {
 
         if (window.innerWidth <= 767) {
@@ -639,10 +684,6 @@ if (
     }
 
 
-    /* --------------------------------
-       Number of positions
-    -------------------------------- */
-
     function getMaxSlide() {
 
         return Math.max(
@@ -653,13 +694,10 @@ if (
     }
 
 
-    /* --------------------------------
-       Create dots
-    -------------------------------- */
-
     function createDots() {
 
         sliderDots.innerHTML = "";
+
 
         const total =
             getMaxSlide() + 1;
@@ -714,15 +752,15 @@ if (
     }
 
 
-    /* --------------------------------
-       Move slider
-    -------------------------------- */
-
     function updateSlider() {
 
+        if (!slides.length) return;
+
+
         const slideWidth =
-            slides[0].getBoundingClientRect()
-            .width;
+            slides[0]
+                .getBoundingClientRect()
+                .width;
 
 
         const gap =
@@ -730,7 +768,7 @@ if (
                 getComputedStyle(
                     impactSlider
                 ).gap
-            );
+            ) || 0;
 
 
         const move =
@@ -741,8 +779,6 @@ if (
         impactSlider.style.transform =
             `translateX(-${move}px)`;
 
-
-        /* Update dots */
 
         const dots =
             document.querySelectorAll(
@@ -761,8 +797,6 @@ if (
             }
         );
 
-
-        /* Disable buttons */
 
         prevSlide.disabled =
             currentSlide === 0;
@@ -786,10 +820,6 @@ if (
     }
 
 
-    /* --------------------------------
-       Next
-    -------------------------------- */
-
     nextSlide.addEventListener(
         "click",
         () => {
@@ -809,10 +839,6 @@ if (
     );
 
 
-    /* --------------------------------
-       Previous
-    -------------------------------- */
-
     prevSlide.addEventListener(
         "click",
         () => {
@@ -829,10 +855,6 @@ if (
     );
 
 
-    /* --------------------------------
-       Responsive
-    -------------------------------- */
-
     window.addEventListener(
         "resize",
         () => {
@@ -848,10 +870,12 @@ if (
                 oldSlides !== slidesPerView
             ) {
 
-                currentSlide = Math.min(
-                    currentSlide,
-                    getMaxSlide()
-                );
+                currentSlide =
+                    Math.min(
+                        currentSlide,
+                        getMaxSlide()
+                    );
+
 
                 createDots();
 
@@ -863,10 +887,6 @@ if (
         }
     );
 
-
-    /* --------------------------------
-       Touch / Swipe
-    -------------------------------- */
 
     let touchStartX = 0;
 
@@ -899,8 +919,6 @@ if (
                 touchStartX - touchEndX;
 
 
-            /* Swipe left */
-
             if (
                 difference > 50 &&
                 currentSlide < getMaxSlide()
@@ -912,8 +930,6 @@ if (
 
             }
 
-
-            /* Swipe right */
 
             if (
                 difference < -50 &&
@@ -929,10 +945,6 @@ if (
         }
     );
 
-
-    /* --------------------------------
-       Auto Play
-    -------------------------------- */
 
     let autoPlay =
         setInterval(
@@ -958,8 +970,6 @@ if (
             5000
         );
 
-
-    /* Stop autoplay on hover */
 
     impactSlider.addEventListener(
         "mouseenter",
@@ -1003,10 +1013,6 @@ if (
     );
 
 
-    /* --------------------------------
-       Initialize
-    -------------------------------- */
-
     updateSlidesPerView();
 
     createDots();
@@ -1015,52 +1021,78 @@ if (
 
 }
 
-const waterSwiper = new Swiper(".waterSwiper", {
 
-    loop: true,
+/* =====================================================
+   WATER SWIPER
+===================================================== */
 
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
+if (
+    typeof Swiper !== "undefined" &&
+    document.querySelector(".waterSwiper")
+) {
 
-    effect: "coverflow",
+    const waterSwiper =
+        new Swiper(
+            ".waterSwiper",
+            {
 
-    coverflowEffect: {
-        rotate: 30,
-        stretch: 0,
-        depth: 150,
-        modifier: 1,
-        slideShadows: false,
-    },
+                loop: true,
 
-    slidesPerView: 1,
+                slidesPerView: 1,
 
-    spaceBetween: 30,
-
-    pagination: {
-        el: ".waterSwiper .swiper-pagination",
-        clickable: true,
-    },
-
-    navigation: {
-        nextEl: ".waterSwiper .swiper-button-next",
-        prevEl: ".waterSwiper .swiper-button-prev",
-    },
-
-    breakpoints: {
-
-        768: {
-            slidesPerView: 2,
-        },
-
-        1200: {
-            slidesPerView: 3,
-        }
-
-    }
-
-});
+                spaceBetween: 25,
 
 
+                autoplay: {
 
+                    delay: 3000,
+
+                    disableOnInteraction: false,
+
+                    pauseOnMouseEnter: true
+
+                },
+
+
+                pagination: {
+
+                    el:
+                        ".waterSwiper .swiper-pagination",
+
+                    clickable: true
+
+                },
+
+
+                navigation: {
+
+                    nextEl:
+                        ".waterSwiper .swiper-button-next",
+
+                    prevEl:
+                        ".waterSwiper .swiper-button-prev"
+
+                },
+
+
+                breakpoints: {
+
+                    768: {
+
+                        slidesPerView: 2
+
+                    },
+
+
+                    1200: {
+
+                        slidesPerView: 3
+
+                    }
+
+                }
+
+            }
+        );
+
+}
