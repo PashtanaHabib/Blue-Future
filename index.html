@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blue Future</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <div class="logo melting-text-container">
-        <img src="images/logo.png" alt="">
+        <img src="images/logo.png" alt="" />
       </div>
 
       <nav>
@@ -23,18 +23,18 @@
 
       <div class="header-text">
         <button id="theme-btn" class="theme-btn">
-        <span id="theme-icon">☀</span>
-        <span id="theme-text">Light</span>
+          <span id="theme-icon">☀</span>
+          <span id="theme-text">Light</span>
         </button>
       </div>
     </header>
     <main></main>
 
-     <footer>
+    <footer>
       <div class="footer-grid">
         <div class="footer-col">
           <div class="brand" style="margin-bottom: 14px">
-            <img src="images/logo.png" alt="">
+            <img src="images/logo.png" alt="" />
           </div>
           <p>
             A project raising awareness about the global water crisis, mapping
@@ -50,7 +50,7 @@
             <li><a href="find water.html">Find Water</a></li>
             <li><a href="Report & Problem.html">Report & Problem</a></li>
             <li><a href="Water solving.html">Water solving</a></li>
-            <li> <a href="about.html">About</a></li>
+            <li><a href="about.html">About</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -68,61 +68,47 @@
       </div>
     </footer>
 
-
     <script>
-    const themeBtn = document.getElementById("theme-btn");
-    const themeIcon = document.getElementById("theme-icon");
-    const themeText = document.getElementById("theme-text");
+      const themeBtn = document.getElementById("theme-btn");
+      const themeIcon = document.getElementById("theme-icon");
+      const themeText = document.getElementById("theme-text");
 
-    const html = document.documentElement;
+      const html = document.documentElement;
 
-
-    /* ==============================
+      /* ==============================
        LOAD SAVED THEME
     ============================== */
 
-    const savedTheme = localStorage.getItem("blue-future-theme");
+      const savedTheme = localStorage.getItem("blue-future-theme");
 
-    if (savedTheme === "dark") {
+      if (savedTheme === "dark") {
         html.classList.add("darkmode");
 
         themeIcon.textContent = "☾";
         themeText.textContent = "Dark";
-    }
+      }
 
-
-    /* ==============================
+      /* ==============================
        TOGGLE THEME
     ============================== */
 
-    themeBtn.addEventListener("click", () => {
-
+      themeBtn.addEventListener("click", () => {
         html.classList.toggle("darkmode");
-
 
         /* Check current mode */
 
         if (html.classList.contains("darkmode")) {
+          themeIcon.textContent = "☾";
+          themeText.textContent = "Dark";
 
-            themeIcon.textContent = "☾";
-            themeText.textContent = "Dark";
-
-            localStorage.setItem(
-                "blue-future-theme",
-                "dark"
-            );
-
+          localStorage.setItem("blue-future-theme", "dark");
         } else {
+          themeIcon.textContent = "☀";
+          themeText.textContent = "Light";
 
-            themeIcon.textContent = "☀";
-            themeText.textContent = "Light";
-
-            localStorage.setItem(
-                "blue-future-theme",
-                "light"
-            );
+          localStorage.setItem("blue-future-theme", "light");
         }
-    });
-</script>
+      });
+    </script>
   </body>
 </html>
