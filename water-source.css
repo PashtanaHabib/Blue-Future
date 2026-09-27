@@ -99,25 +99,37 @@ nav {
     font-family: Fisherman, Arial, sans-serif;
 }
 
-nav a {
-    color: #123b68;
-
+.nav-link {
+    position: relative;
+    color: #64748b;
     text-decoration: none;
-
-    margin: 0 15px;
-
-    font-size: 18px;
-    font-weight: 500;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+    font-weight: 600;
+    transition: 0.3s ease;
+    padding: 10px 20px;
 }
 
-nav a:hover {
-    color: #0b4f91;
+.nav-link:hover {
+    color: #0878b8;
+}
 
-    transform: translateY(-2px);
+.nav-link.active {
+    color: #0878b8;
+}
+
+/* خط زیر لینک فعال */
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #0878b8;
+    border-radius: 10px;
 }
 
 
