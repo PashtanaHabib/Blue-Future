@@ -133,6 +133,107 @@
               </div>
             </div>
           </div>
+           <div class="panel">
+            <div class="panel-header">
+              <h4>Hotspots</h4>
+            </div>
+            <div class="hotspot-list" id="hotspotList">
+              <div class="hotspot-item" data-hotspot="H-1" data-name="Caribbean Basin" data-info="Plastic concentration detected — 1,240 tons estimated">
+                <span class="hotspot-index">H-1</span>
+                <div class="hotspot-info">
+                  <div class="name">Caribbean Basin</div>
+                  <div class="location">Atlantic Ocean</div>
+                </div>
+                <div class="hotspot-bar"></div>
+              </div>
+              <div class="hotspot-item" data-hotspot="H-2" data-name="Cargo Traffic Area" data-info="High marine traffic — cleanup activity required">
+                <span class="hotspot-index">H-2</span>
+                <div class="hotspot-info">
+                  <div class="name">Cargo Traffic Area</div>
+                  <div class="location">Indian Ocean</div>
+                </div>
+                <div class="hotspot-bar medium"></div>
+              </div>
+              <div class="hotspot-item" data-hotspot="H-3" data-name="Pacific Garbage Zone" data-info="Critical plastic density — immediate action needed">
+                <span class="hotspot-index">H-3</span>
+                <div class="hotspot-info">
+                  <div class="name">Pacific Garbage Zone</div>
+                  <div class="location">Pacific Ocean</div>
+                </div>
+                <div class="hotspot-bar medium"></div>
+              </div>
+            </div>
+            <div class="hotspot-detail" id="hotspotDetail"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h4>Heatmap</h4>
+              <span style="font-size:0.65rem;color:rgba(155,231,245,0.6);letter-spacing:0.06em;">Where We're Making Waves</span>
+            </div>
+            <div class="world-map-container" id="worldMapContainer">
+              <svg class="world-map-svg" viewBox="0 0 300 140" preserveAspectRatio="xMidYMid meet">
+                <g fill="rgba(155, 231, 245, 0.15)" stroke="rgba(155, 231, 245, 0.12)" stroke-width="0.5">
+                  <path d="M40,30 Q50,20 70,22 Q85,25 85,40 Q80,55 65,60 Q45,62 35,50 Q30,40 40,30Z" />
+                  <path d="M75,65 Q85,60 95,65 Q100,80 95,100 Q88,115 80,118 Q72,110 72,90 Q70,75 75,65Z" />
+                  <path d="M140,25 Q155,18 170,22 Q175,35 165,45 Q155,50 145,45 Q135,38 140,25Z" />
+                  <path d="M150,50 Q165,45 180,50 Q185,70 175,90 Q165,105 155,100 Q145,85 145,65 Q145,55 150,50Z" />
+                  <path d="M180,20 Q210,12 240,18 Q260,28 265,45 Q260,65 240,70 Q220,68 205,55 Q190,45 182,35 Q178,28 180,20Z" />
+                  <path d="M240,85 Q260,80 275,85 Q285,95 280,110 Q270,120 255,118 Q240,112 238,100 Q238,90 240,85Z" />
+                </g>
+                <g class="map-marker" data-location="Caribbean Basin" data-priority="High" data-status="Active cleanup" data-removed="1,240 tons" data-cx="65" data-cy="45">
+                  <circle cx="65" cy="45" r="5" fill="#38C8E8" opacity="0.9"/>
+                  <circle cx="65" cy="45" r="10" fill="#38C8E8" opacity="0.2"/>
+                </g>
+                <g class="map-marker" data-location="Pacific Ocean" data-priority="Medium" data-status="Monitoring" data-removed="890 tons" data-cx="160" data-cy="90">
+                  <circle cx="160" cy="90" r="4" fill="#9BE7F5" opacity="0.9"/>
+                  <circle cx="160" cy="90" r="8" fill="#9BE7F5" opacity="0.2"/>
+                </g>
+                <g class="map-marker" data-location="Indian Ocean" data-priority="High" data-status="Cleanup required" data-removed="2,100 tons" data-cx="255" data-cy="95">
+                  <circle cx="255" cy="95" r="5" fill="#38C8E8" opacity="0.9"/>
+                  <circle cx="255" cy="95" r="10" fill="#38C8E8" opacity="0.2"/>
+                </g>
+                <g class="map-marker" data-location="North Atlantic" data-priority="Medium" data-status="Restoration" data-removed="560 tons" data-cx="200" data-cy="45">
+                  <circle cx="200" cy="45" r="4" fill="#087EA4" opacity="0.9"/>
+                  <circle cx="200" cy="45" r="9" fill="#087EA4" opacity="0.2"/>
+                </g>
+              </svg>
+              <button class="view-map-btn" id="viewMapBtn">View Full Map</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="mapModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-title">Global Cleanup Heatmap</div>
+      <div class="modal-subtitle">Real-time overview of active cleanup zones and priority areas</div>
+
+      <div class="modal-map-container">
+        <svg class="modal-map-svg" viewBox="0 0 300 140" preserveAspectRatio="xMidYMid meet">
+          <g fill="rgba(155, 231, 245, 0.18)" stroke="rgba(155, 231, 245, 0.15)" stroke-width="0.5">
+            <path d="M40,30 Q50,20 70,22 Q85,25 85,40 Q80,55 65,60 Q45,62 35,50 Q30,40 40,30Z" />
+            <path d="M75,65 Q85,60 95,65 Q100,80 95,100 Q88,115 80,118 Q72,110 72,90 Q70,75 75,65Z" />
+            <path d="M140,25 Q155,18 170,22 Q175,35 165,45 Q155,50 145,45 Q135,38 140,25Z" />
+            <path d="M150,50 Q165,45 180,50 Q185,70 175,90 Q165,105 155,100 Q145,85 145,65 Q145,55 150,50Z" />
+            <path d="M180,20 Q210,12 240,18 Q260,28 265,45 Q260,65 240,70 Q220,68 205,55 Q190,45 182,35 Q178,28 180,20Z" />
+            <path d="M240,85 Q260,80 275,85 Q285,95 280,110 Q270,120 255,118 Q240,112 238,100 Q238,90 240,85Z" />
+          </g>
+          <circle cx="65" cy="45" r="8" fill="#38C8E8" opacity="0.9"/>
+          <circle cx="65" cy="45" r="16" fill="#38C8E8" opacity="0.2"/>
+          <circle cx="160" cy="90" r="6" fill="#9BE7F5" opacity="0.9"/>
+          <circle cx="160" cy="90" r="12" fill="#9BE7F5" opacity="0.2"/>
+          <circle cx="255" cy="95" r="8" fill="#38C8E8" opacity="0.9"/>
+          <circle cx="255" cy="95" r="16" fill="#38C8E8" opacity="0.2"/>
+          <circle cx="200" cy="45" r="6" fill="#087EA4" opacity="0.9"/>
+          <circle cx="200" cy="45" r="12" fill="#087EA4" opacity="0.2"/>
+        </svg>
+      </div>
 
    
 
