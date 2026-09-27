@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Future</title>
+    <link rel="stylesheet" href="about-style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- <header>
+      <div class="logo melting-text-container">
+        <img src="images/logo.png" alt="">
+      </div>
+
+
+      <nav class="navbar">
+        <a href="index.html"  class="nav-link">Home</a>
+        <a href="water source.html"  class="nav-link">Water Source</a>
+        <a href="find water.html"  class="nav-link">Find Water</a>
+        <a href="Report & Problem.html" class="nav-link">Report & Problem</a>
+        <a href="Water solving.html" class="nav-link">Water solving</a>
+        <a href="about.html" class="nav-link active">About</a>
+      </nav>
+
+      <div class="header-text">
+        <button id="theme-btn" class="theme-btn">
+        <span id="theme-icon">☀</span>
+        <span id="theme-text">Light</span>
+        </button>
+      </div>
+    </header> -->
+
+<header>
+  <!-- Logo -->
+  <div class="logo melting-text-container">
+    <img src="images/logo.png" alt="Blue Future Logo">
+  </div>
+
+  <!-- Hamburger Menu -->
+  <button class="menu-btn" id="menu-btn"></button>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="index.html">Home</a>
+    <a href="water source.html">Water Source</a>
+    <a href="find water.html">Find Water</a>
+    <a href="Report & Problem.html">Report & Problem</a>
+    <a href="Water solving.html">Water Solving</a>
+    <a href="about.html">About</a>
+    <a href="feedback.html">Feedback</a>
+  </nav>
+
+  <!-- Theme Button -->
+  <div class="header-text">
+    <button id="theme-btn" class="theme-btn">
+      <span id="theme-icon">☀️</span>
+      <span id="theme-text">Light</span>
+    </button>
+  </div>
+</header>
+
+
+     <div class="ocean-bg"></div>
+  <div class="particles" id="particles"></div>
+
+   <div class="app">
+    <div class="glass-frame">
+
+      
+
+       <div class="hero-typography">
+        <div class="cleanup-text">Blue Future</div>
+        <div class="hero-subtitle">GLOBAL OCEAN CLEANUP</div>
+      </div>
+
+      <div class="cta-wrapper">
+        <button class="btn-dashboard" id="viewDashboardBtn">
+          <i class="fas fa-chart-pie"></i>
+          <span id="btnText">View Dashboard</span>
+        </button>
+      </div>
+      <div class="dashboard-overlap" id="dashboard">
+
+        <div class="dashboard-header">
+          <div class="dashboard-title">
+            <h3>Today's Analytics</h3>
+            <p>Tracking every pound of waste to build cleaner oceans.</p>
+          </div>
+          <div class="live-status">
+            <span class="live-dot"></span>
+            <span>LIVE</span>
+            <span id="liveMessage">Cleanup operations active</span>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card" data-tooltip="Total plastic collected from ocean surface since 2020">
+            <div class="stat-value"><span id="counter1">0</span> <span>tons</span></div>
+            <div class="stat-label">Plastic Removed</div>
+            <div class="stat-tooltip">Total plastic collected from ocean surface since 2020</div>
+          </div>
+          <div class="stat-card" data-tooltip="Marine species protected through cleanup and habitat restoration">
+            <div class="stat-value"><span id="counter2">0</span> <span>species</span></div>
+            <div class="stat-label">Marine Species Saved</div>
+            <div class="stat-tooltip">Marine species protected through cleanup and habitat restoration</div>
+          </div>
+          <div class="stat-card" data-tooltip="Ocean zones fully restored and monitored for future protection">
+            <div class="stat-value"><span id="counter3">0</span> <span>hotspots</span></div>
+            <div class="stat-label">Zones Restored</div>
+            <div class="stat-tooltip">Ocean zones fully restored and monitored for future protection</div>
+          </div>
+        </div>
+
+         <div class="lower-grid">
+
+          <div class="panel">
+            <div class="panel-header">
+              <h4>Map Annotations</h4>
+              <div class="chart-filters">
+                <button class="filter-btn active" data-filter="thisYear">This Year</button>
+                <button class="filter-btn" data-filter="lastYear">Last Year</button>
+              </div>
+            </div>
+            <div class="line-chart-container">
+              <svg class="chart-svg" viewBox="0 0 300 100" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#38C8E8" stop-opacity="0.95"/>
+                    <stop offset="50%" stop-color="#087EA4" stop-opacity="1"/>
+                    <stop offset="100%" stop-color="#063B63" stop-opacity="0.9"/>
+                  </linearGradient>
+                  <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#38C8E8" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#38C8E8" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path class="chart-area" id="chartArea" d="M0,85 Q30,70 60,75 T120,55 T180,60 T240,35 T300,45 L300,100 L0,100 Z" fill="url(#areaGrad)"/>
+                <path class="chart-line" id="chartLine" d="M0,85 Q30,70 60,75 T120,55 T180,60 T240,35 T300,45" fill="none" stroke="url(#lineGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle class="chart-dot" id="dot1" cx="60" cy="75" r="3" fill="#FFFFFF" stroke="#38C8E8" stroke-width="1.5"/>
+                <circle class="chart-dot" id="dot2" cx="120" cy="55" r="3" fill="#FFFFFF" stroke="#38C8E8" stroke-width="1.5"/>
+                <circle class="chart-dot" id="dot3" cx="180" cy="60" r="3" fill="#FFFFFF" stroke="#38C8E8" stroke-width="1.5"/>
+                <circle class="chart-dot" id="dot4" cx="240" cy="35" r="3" fill="#FFFFFF" stroke="#38C8E8" stroke-width="1.5"/>
+              </svg>
+              <div class="chart-labels">
+                <span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span>
+              </div>
+            </div>
+          </div>
+           <div class="panel">
+            <div class="panel-header">
+              <h4>Hotspots</h4>
+            </div>
+            <div class="hotspot-list" id="hotspotList">
+              <div class="hotspot-item" data-hotspot="H-1" data-name="Caribbean Basin" data-info="Plastic concentration detected — 1,240 tons estimated">
+                <span class="hotspot-index">H-1</span>
+                <div class="hotspot-info">
+                  <div class="name">Caribbean Basin</div>
+                  <div class="location">Atlantic Ocean</div>
+                </div>
+                <div class="hotspot-bar"></div>
+              </div>
+              <div class="hotspot-item" data-hotspot="H-2" data-name="Cargo Traffic Area" data-info="High marine traffic — cleanup activity required">
+                <span class="hotspot-index">H-2</span>
+                <div class="hotspot-info">
+                  <div class="name">Cargo Traffic Area</div>
+                  <div class="location">Indian Ocean</div>
+                </div>
+                <div class="hotspot-bar medium"></div>
+              </div>
+              <div class="hotspot-item" data-hotspot="H-3" data-name="Pacific Garbage Zone" data-info="Critical plastic density — immediate action needed">
+                <span class="hotspot-index">H-3</span>
+                <div class="hotspot-info">
+                  <div class="name">Pacific Garbage Zone</div>
+                  <div class="location">Pacific Ocean</div>
+                </div>
+                <div class="hotspot-bar medium"></div>
+              </div>
+            </div>
+            <div class="hotspot-detail" id="hotspotDetail"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h4>Heatmap</h4>
+              <span style="font-size:0.65rem;color:rgba(155,231,245,0.6);letter-spacing:0.06em;">Where We're Making Waves</span>
+            </div>
+            <div class="world-map-container" id="worldMapContainer">
+              <svg class="world-map-svg" viewBox="0 0 300 140" preserveAspectRatio="xMidYMid meet">
+                <g fill="rgba(155, 231, 245, 0.15)" stroke="rgba(155, 231, 245, 0.12)" stroke-width="0.5">
+                  <path d="M40,30 Q50,20 70,22 Q85,25 85,40 Q80,55 65,60 Q45,62 35,50 Q30,40 40,30Z" />
+                  <path d="M75,65 Q85,60 95,65 Q100,80 95,100 Q88,115 80,118 Q72,110 72,90 Q70,75 75,65Z" />
+                  <path d="M140,25 Q155,18 170,22 Q175,35 165,45 Q155,50 145,45 Q135,38 140,25Z" />
+                  <path d="M150,50 Q165,45 180,50 Q185,70 175,90 Q165,105 155,100 Q145,85 145,65 Q145,55 150,50Z" />
+                  <path d="M180,20 Q210,12 240,18 Q260,28 265,45 Q260,65 240,70 Q220,68 205,55 Q190,45 182,35 Q178,28 180,20Z" />
+                  <path d="M240,85 Q260,80 275,85 Q285,95 280,110 Q270,120 255,118 Q240,112 238,100 Q238,90 240,85Z" />
+                </g>
+                <g class="map-marker" data-location="Caribbean Basin" data-priority="High" data-status="Active cleanup" data-removed="1,240 tons" data-cx="65" data-cy="45">
+                  <circle cx="65" cy="45" r="5" fill="#38C8E8" opacity="0.9"/>
+                  <circle cx="65" cy="45" r="10" fill="#38C8E8" opacity="0.2"/>
+                </g>
+                <g class="map-marker" data-location="Pacific Ocean" data-priority="Medium" data-status="Monitoring" data-removed="890 tons" data-cx="160" data-cy="90">
+                  <circle cx="160" cy="90" r="4" fill="#9BE7F5" opacity="0.9"/>
+                  <circle cx="160" cy="90" r="8" fill="#9BE7F5" opacity="0.2"/>
+                </g>
+                <g class="map-marker" data-location="Indian Ocean" data-priority="High" data-status="Cleanup required" data-removed="2,100 tons" data-cx="255" data-cy="95">
+                  <circle cx="255" cy="95" r="5" fill="#38C8E8" opacity="0.9"/>
+                  <circle cx="255" cy="95" r="10" fill="#38C8E8" opacity="0.2"/>
+                </g>
+                <g class="map-marker" data-location="North Atlantic" data-priority="Medium" data-status="Restoration" data-removed="560 tons" data-cx="200" data-cy="45">
+                  <circle cx="200" cy="45" r="4" fill="#087EA4" opacity="0.9"/>
+                  <circle cx="200" cy="45" r="9" fill="#087EA4" opacity="0.2"/>
+                </g>
+              </svg>
+              <button class="view-map-btn" id="viewMapBtn">View Full Map</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="mapModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-title">Global Cleanup Heatmap</div>
+      <div class="modal-subtitle">Real-time overview of active cleanup zones and priority areas</div>
+
+      <div class="modal-map-container">
+        <svg class="modal-map-svg" viewBox="0 0 300 140" preserveAspectRatio="xMidYMid meet">
+          <g fill="rgba(155, 231, 245, 0.18)" stroke="rgba(155, 231, 245, 0.15)" stroke-width="0.5">
+            <path d="M40,30 Q50,20 70,22 Q85,25 85,40 Q80,55 65,60 Q45,62 35,50 Q30,40 40,30Z" />
+            <path d="M75,65 Q85,60 95,65 Q100,80 95,100 Q88,115 80,118 Q72,110 72,90 Q70,75 75,65Z" />
+            <path d="M140,25 Q155,18 170,22 Q175,35 165,45 Q155,50 145,45 Q135,38 140,25Z" />
+            <path d="M150,50 Q165,45 180,50 Q185,70 175,90 Q165,105 155,100 Q145,85 145,65 Q145,55 150,50Z" />
+            <path d="M180,20 Q210,12 240,18 Q260,28 265,45 Q260,65 240,70 Q220,68 205,55 Q190,45 182,35 Q178,28 180,20Z" />
+            <path d="M240,85 Q260,80 275,85 Q285,95 280,110 Q270,120 255,118 Q240,112 238,100 Q238,90 240,85Z" />
+          </g>
+          <circle cx="65" cy="45" r="8" fill="#38C8E8" opacity="0.9"/>
+          <circle cx="65" cy="45" r="16" fill="#38C8E8" opacity="0.2"/>
+          <circle cx="160" cy="90" r="6" fill="#9BE7F5" opacity="0.9"/>
+          <circle cx="160" cy="90" r="12" fill="#9BE7F5" opacity="0.2"/>
+          <circle cx="255" cy="95" r="8" fill="#38C8E8" opacity="0.9"/>
+          <circle cx="255" cy="95" r="16" fill="#38C8E8" opacity="0.2"/>
+          <circle cx="200" cy="45" r="6" fill="#087EA4" opacity="0.9"/>
+          <circle cx="200" cy="45" r="12" fill="#087EA4" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="location-cards">
+        <div class="location-card">
+          <div class="loc-name">Caribbean Basin</div>
+          <div class="loc-priority high">Priority: High</div>
+          <div class="loc-stat">1,240 tons</div>
+          <div class="loc-stat-label">Plastic removed</div>
+        </div>
+        <div class="location-card">
+          <div class="loc-name">Pacific Ocean</div>
+          <div class="loc-priority medium">Priority: Medium</div>
+          <div class="loc-stat">890 tons</div>
+          <div class="loc-stat-label">Plastic removed</div>
+        </div>
+        <div class="location-card">
+          <div class="loc-name">Indian Ocean</div>
+          <div class="loc-priority high">Priority: High</div>
+          <div class="loc-stat">2,100 tons</div>
+          <div class="loc-stat-label">Plastic removed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand" style="margin-bottom: 14px">
+            <img src="images/logo.png" alt="">
+          </div>
+          <p>
+            A project raising awareness about the global water crisis, mapping
+            water sources, and giving citizens a simple way to report and help
+            solve water problems.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="water source.html">Water Source</a></li>
+            <li><a href="find water.html">Find Water</a></li>
+            <li><a href="Report & Problem.html">Report & Problem</a></li>
+            <li><a href="Water solving.html">Water solving</a></li>
+            <li> <a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <p>
+            Have a suggestion or know a water source we're missing? Reach out
+            through the Report Problem form and help build the water map for
+            your area.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© ‌Blue Future — Built for a future with sustainable water</span>
+        <span>An educational, non-profit project</span>
+      </div>
+    </footer>
+
+   
+  
+    <script src="about-java.js"></script>
+ 
+</body>
+</html>

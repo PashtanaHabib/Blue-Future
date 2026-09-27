@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Water Source | Blue Future</title>
+
+    <link rel="stylesheet" href="water-source.css">
+</head>
+
+<body>
+
+    <!-- wave clip-path used on the two capsule cards -->
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <clipPath id="waveCardClip" clipPathUnits="objectBoundingBox">
+                <path d="M0.05,0.035
+                    C0.1,0.01 0.15,0.06 0.2,0.035
+                    C0.25,0.01 0.3,0.06 0.35,0.035
+                    C0.4,0.01 0.45,0.06 0.5,0.035
+                    C0.55,0.01 0.6,0.06 0.65,0.035
+                    C0.7,0.01 0.75,0.06 0.8,0.035
+                    C0.85,0.01 0.9,0.03 0.95,0.035
+                    C0.98,0.04 0.99,0.06 0.99,0.1
+                    L0.99,0.9
+                    C0.99,0.94 0.98,0.96 0.95,0.965
+                    C0.9,0.97 0.85,0.99 0.8,0.965
+                    C0.75,0.94 0.7,0.99 0.65,0.965
+                    C0.6,0.94 0.55,0.99 0.5,0.965
+                    C0.45,0.94 0.4,0.99 0.35,0.965
+                    C0.3,0.94 0.25,0.99 0.2,0.965
+                    C0.15,0.94 0.1,0.99 0.05,0.965
+                    C0.02,0.96 0.01,0.94 0.01,0.9
+                    L0.01,0.1
+                    C0.01,0.06 0.02,0.04 0.05,0.035 Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <!-- =====================================
+         HEADER / NAVBAR
+    ====================================== -->
+
+    <header>
+
+        <div class="logo">
+            <img src="images/logo.png" alt="Blue Future Logo">
+        </div>
+
+        <nav class="navbar">
+            <a href="" class="nav-link">Home</a>
+            <a href="water source.html" class="nav-link active">Water Source</a>
+            <a href="" class="nav-link">Find Water</a>
+            <a href="" class="nav-link">Report & Problem</a>
+            <a href="" class="nav-link">Water solving</a>
+            <a href="" class="nav-link">About</a>
+            <a href="" class="nav-link">Feedback</a>
+        </nav>
+
+        <div class="header-text">
+
+            <button id="theme-btn" class="theme-btn">
+
+                <span id="theme-icon">☀</span>
+
+                <span id="theme-text">Light</span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         WATER SOURCE HERO
+    ====================================== -->
+
+    <header class="surface-hero">
+
+        <div class="boat boat-one">⛵</div>
+        <div class="boat boat-two">⛵</div>
+
+        <div class="hero-title">
+
+            <span>WATER</span>
+            <strong>SOURCES</strong>
+
+        </div>
+
+        <div class="hero-wave">
+
+            <svg
+                viewBox="0 0 1440 180"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <path
+                    d="M0,80 C240,150 480,0 720,75 C960,150 1200,30 1440,85 L1440,180 L0,180 Z">
+                </path>
+
+            </svg>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================
+         WATER SOURCE CONTENT
+    ====================================== -->
+
+    <main class="stage">
+
+        <div class="row-caps">
+
+            <!-- LEFT CARD -->
+
+            <section class="source-column">
+
+                <div class="capsule">
+
+                    <span class="section-number">01</span>
+
+                    <h2>Fresh Water Sources</h2>
+
+                    <p class="intro-text">
+                        Fresh water comes from several natural sources.
+                        These sources provide the water people, animals,
+                        plants and communities need to survive.
+                    </p>
+
+
+                    <div class="src-item">
+
+                        <div class="src-icon">🌊</div>
+
+                        <div>
+                            <h3>Rivers</h3>
+
+                            <p>
+                                Rivers carry fresh water across the land
+                                and are important sources for communities,
+                                agriculture and ecosystems.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="src-item">
+
+                        <div class="src-icon">🏞️</div>
+
+                        <div>
+                            <h3>Lakes</h3>
+
+                            <p>
+                                Lakes store large amounts of fresh water
+                                and support people, wildlife and plants.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="src-item">
+
+                        <div class="src-icon">💧</div>
+
+                        <div>
+                            <h3>Groundwater</h3>
+
+                            <p>
+                                Groundwater is stored below the Earth's
+                                surface and is accessed through wells.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="src-item">
+
+                        <div class="src-icon">🌧️</div>
+
+                        <div>
+                            <h3>Rainwater</h3>
+
+                            <p>
+                                Rain provides fresh water naturally and
+                                can be collected and stored for later use.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CENTER WATER THERMOMETER -->
+
+            <section class="tank-column">
+
+                <div class="thermo-wrap">
+
+                    <span class="thermo-scale top">100%</span>
+
+                    <div class="thermo">
+
+                        <div class="thermo-tube">
+                            <div class="thermo-fill"></div>
+                        </div>
+
+                        <div class="thermo-bulb">
+                            <div class="thermo-fill"></div>
+                        </div>
+
+                    </div>
+
+                    <span class="thermo-scale bottom">0%</span>
+
+                    <ul class="thermo-legend">
+
+                        <li>
+                            <span class="dot ocean"></span>
+                            Oceans (salt water) — 97%
+                        </li>
+
+                        <li>
+                            <span class="dot glacier"></span>
+                            Mountains &amp; glaciers — 2%
+                        </li>
+
+                        <li>
+                            <span class="dot drink"></span>
+                            Drinkable &amp; usable — 1%
+                        </li>
+
+                    </ul>
+
+                    <p class="tank-caption">
+                        All the water on Earth — bands enlarged for
+                        visibility, not to scale.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT CARD -->
+
+            <section class="source-column">
+
+                <div class="capsule">
+
+                    <span class="section-number">02</span>
+
+                    <h2>Did You Know?</h2>
+
+
+                    <div class="info-tabs">
+
+                        <button
+                            class="info-tab active"
+                            data-tab="one">
+                            Water
+                        </button>
+
+                        <button
+                            class="info-tab"
+                            data-tab="two">
+                            Earth
+                        </button>
+
+                        <button
+                            class="info-tab"
+                            data-tab="three">
+                            Future
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="tab-content active"
+                        id="one">
+
+                        <p>
+                            Only a small percentage of the water on Earth
+                            is fresh water that people can use.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tab-content"
+                        id="two">
+
+                        <p>
+                            Most of Earth's water is found in oceans,
+                            while fresh water is stored in glaciers,
+                            groundwater, lakes and rivers.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="tab-content"
+                        id="three">
+
+                        <p>
+                            Protecting water sources today helps ensure
+                            that future generations have access to clean
+                            and safe water.
+                        </p>
+
+                    </div>
+
+
+                    <div class="check-list">
+
+                        <div>
+                            <span>✓</span>
+                            Protect rivers and lakes
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Reduce water pollution
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Use water responsibly
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Report damaged water sources
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="learn-more"
+                        id="learnMore">
+                        Learn More →
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <!-- FOOTER COLUMN 1 -->
+
+            <div class="footer-col">
+
+                <div class="brand">
+
+                    <img
+                        src="images/logo.png"
+                        alt="Blue Future Logo">
+
+                </div>
+
+                <p>
+                    A project raising awareness about the global water
+                    crisis, mapping water sources, and giving citizens
+                    a simple way to report and help solve water problems.
+                </p>
+
+            </div>
+
+
+            <!-- FOOTER COLUMN 2 -->
+
+            <div class="footer-col">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="water source.html">
+                            Water Source
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="find water.html">
+                            Find Water
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="Report & Problem.html">
+                            Report & Problem
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="Water solving.html">
+                            Water solving
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- FOOTER COLUMN 3 -->
+
+            <div class="footer-col">
+
+                <h4>Get Involved</h4>
+
+                <p>
+                    Have a suggestion or know a water source we're
+                    missing? Reach out through the Report Problem form
+                    and help build the water map for your area.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © Blue Future | Built for a future with sustainable water
+            </span>
+
+            <span>
+                An educational, non-profit project
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="water-source.js"></script>
+
+</body>
+
+</html>
