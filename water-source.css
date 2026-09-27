@@ -1,0 +1,1338 @@
+/* =====================================
+   GLOBAL
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #dcefff,
+        #9ed7f5,
+        #6ebbdc
+    );
+
+    color: #123b68;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+main {
+    flex: 1;
+}
+
+
+/* =====================================
+   HEADER / NAVBAR
+===================================== */
+
+header:not(.surface-hero) {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px 35px;
+}
+
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    height: 45px;
+
+    object-fit: contain;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(18, 59, 104, 0.18);
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        5px 5px 12px rgba(196, 214, 240, 0.35);
+
+    backdrop-filter: blur(8px);
+
+    font-family: Fisherman, Arial, sans-serif;
+}
+
+nav a {
+    color: #123b68;
+
+    text-decoration: none;
+
+    margin: 0 15px;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #0b4f91;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   HEADER BUTTON
+===================================== */
+
+.header-text {
+    font-family: Fisherman, Arial, sans-serif;
+}
+
+.theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(18, 59, 104, 0.25);
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    color: #123b68;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+
+    transform: translateY(-2px);
+}
+
+#theme-icon {
+    font-size: 17px;
+}
+
+
+/* =====================================
+   WATER SOURCE HERO
+===================================== */
+
+.surface-hero {
+    position: relative;
+
+    height: 315px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #66c8f4,
+            #2699cf,
+            #0877aa
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.hero-title {
+    position: relative;
+
+    z-index: 4;
+
+    text-align: center;
+
+    font-family: Fisherman, Arial, sans-serif;
+
+    line-height: 0.9;
+}
+
+.hero-title span {
+    display: block;
+
+    font-size: clamp(45px, 7vw, 90px);
+
+    font-weight: 300;
+
+    letter-spacing: 5px;
+}
+
+.hero-title strong {
+    display: block;
+
+    font-size: clamp(50px, 8vw, 105px);
+
+    letter-spacing: 7px;
+}
+
+
+/* =====================================
+   BOATS
+===================================== */
+
+.boat {
+    position: absolute;
+
+    z-index: 3;
+
+    font-size: 46px;
+
+    animation: boatMove 5s ease-in-out infinite;
+}
+
+.boat-one {
+    left: 12%;
+
+    top: 72%;
+}
+
+.boat-two {
+    right: 12%;
+
+    top: 72%;
+
+    animation-delay: 1.4s;
+}
+
+@keyframes boatMove {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =====================================
+   HERO WAVE
+===================================== */
+
+.hero-wave {
+    position: absolute;
+
+    left: 0;
+    bottom: -1px;
+
+    width: 100%;
+
+    z-index: 5;
+}
+
+.hero-wave svg {
+    display: block;
+
+    width: 100%;
+
+    height: 110px;
+}
+
+.hero-wave path {
+    fill: rgba(220, 239, 255, 0.95);
+}
+
+
+/* =====================================
+   WATER SOURCE STAGE
+===================================== */
+
+.stage {
+    position: relative;
+
+    z-index: 6;
+
+    width: min(1120px, 92%);
+
+    margin: -20px auto 0;
+
+    padding-bottom: 70px;
+}
+
+
+/* =====================================
+   MAIN THREE-COLUMN LAYOUT
+===================================== */
+
+.row-caps {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 5fr)
+        minmax(120px, 2fr)
+        minmax(0, 5fr);
+
+    align-items: stretch;
+
+    gap: 20px;
+}
+
+
+/* =====================================
+   CARD COLUMNS
+===================================== */
+
+.source-column {
+    min-width: 0;
+
+    display: flex;
+}
+
+
+/* =====================================
+   CAPSULE
+===================================== */
+
+.capsule {
+    width: 94%;
+    height: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 34px 34px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(248, 252, 254, 0.9);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 55px;
+    clip-path: url(#waveCardClip);
+
+    filter:
+        drop-shadow(0 20px 34px rgba(40, 100, 125, 0.18));
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+
+    transform: translateY(12px);
+}
+
+.capsule:hover {
+    transform: translateY(7px);
+
+    filter:
+        drop-shadow(0 26px 42px rgba(40, 100, 125, 0.25));
+}
+
+
+/* =====================================
+   SECTION NUMBER
+===================================== */
+
+.section-number {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: #258ab9;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================
+   CARD TITLES
+===================================== */
+
+.capsule h2 {
+    margin: 0 0 14px;
+
+    color: #123b68;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+}
+
+.intro-text {
+    margin-bottom: 25px;
+
+    color: #54708c;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   SOURCE ITEMS
+===================================== */
+
+.src-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #dcebf5;
+}
+
+.src-item:last-child {
+    border-bottom: none;
+}
+
+.src-icon {
+    flex-shrink: 0;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e1f4ff;
+
+    font-size: 22px;
+}
+
+.src-item h3 {
+    margin: 0 0 5px;
+
+    color: #174f7d;
+
+    font-size: 17px;
+}
+
+.src-item p {
+    margin: 0;
+
+    color: #668097;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   THERMOMETER
+===================================== */
+
+.tank-column {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.thermo-wrap {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thermo-scale {
+    font-size: 11px;
+    font-weight: bold;
+
+    color: #426f8d;
+
+    letter-spacing: 1px;
+}
+
+.thermo-scale.top {
+    margin-bottom: 6px;
+}
+
+.thermo-scale.bottom {
+    margin-top: 6px;
+    margin-bottom: 14px;
+}
+
+.thermo {
+    --tube-h: 200px;
+    --bulb-h: 70px;
+
+    position: relative;
+
+    width: 76px;
+    height: 260px;
+}
+
+.thermo-tube {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 30px;
+    height: var(--tube-h);
+
+    overflow: hidden;
+
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    border-bottom: none;
+
+    border-radius: 16px 16px 0 0;
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.thermo-bulb {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 70px;
+    height: var(--bulb-h);
+
+    overflow: hidden;
+
+    border: 3px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 15px 35px rgba(31, 103, 139, 0.2);
+}
+
+.thermo-fill {
+    position: absolute;
+
+    inset: 0;
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    transition: transform 1.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    background-repeat: no-repeat;
+    background-size: 100% calc(var(--tube-h) + var(--bulb-h));
+
+    background-image: linear-gradient(
+        to top,
+        #0a6e9c 0%,
+        #0a6e9c 80%,
+        #63d2f2 80%,
+        #63d2f2 92%,
+        #d8f6ff 92%,
+        #d8f6ff 100%
+    );
+}
+
+.thermo-tube .thermo-fill {
+    background-position: 0 0;
+}
+
+.thermo-bulb .thermo-fill {
+    background-position: 0 calc(-1 * var(--tube-h));
+}
+
+.thermo-legend {
+    list-style: none;
+
+    margin: 16px 0 0;
+    padding: 0;
+
+    text-align: left;
+}
+
+.thermo-legend li {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 6px;
+
+    font-size: 12px;
+    color: #426f8d;
+}
+
+.thermo-legend .dot {
+    flex-shrink: 0;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+}
+
+.thermo-legend .dot.ocean {
+    background: #0a6e9c;
+}
+
+.thermo-legend .dot.glacier {
+    background: #63d2f2;
+}
+
+.thermo-legend .dot.drink {
+    background: #d8f6ff;
+    border: 1px solid rgba(10, 110, 156, 0.3);
+}
+
+.tank-caption {
+    margin-top: 14px;
+
+    max-width: 180px;
+
+    color: #7891a5;
+
+    font-size: 11px;
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   TABS
+===================================== */
+
+.info-tabs {
+    display: flex;
+
+    gap: 7px;
+
+    margin: 20px 0;
+}
+
+.info-tab {
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    background: #e4f2fb;
+
+    color: #32698e;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.info-tab:hover,
+.info-tab.active {
+    background: #2596c9;
+
+    color: white;
+}
+
+.tab-content {
+    display: none;
+
+    color: #54708c;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* =====================================
+   CHECK LIST
+===================================== */
+
+.check-list {
+    margin-top: 20px;
+}
+
+.check-list div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 0;
+
+    color: #4f7189;
+
+    font-size: 14px;
+}
+
+.check-list span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: #dff5e9;
+
+    color: #16864a;
+
+    font-size: 12px;
+}
+
+
+/* =====================================
+   LEARN MORE
+===================================== */
+
+.learn-more {
+    display: inline-block;
+
+    margin-top: auto;
+    padding-top: 18px;
+
+    color: #1688bd;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.learn-more:hover {
+    color: #075c87;
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    position: relative;
+
+    z-index: 10;
+
+    padding: 50px 6vw 25px;
+
+    margin-top: 20px;
+
+    background: #eaf4ff;
+
+    border-top: 1px solid #c9dff5;
+
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* =====================================
+   FOOTER IMAGE
+===================================== */
+
+footer img {
+    width: 40px;
+    height: 45px;
+
+    object-fit: contain;
+}
+
+
+/* =====================================
+   FOOTER GRID
+===================================== */
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 1fr 1fr;
+
+    gap: 36px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================
+   FOOTER TITLES
+===================================== */
+
+.footer-col h4 {
+    margin: 0 0 14px;
+
+    font-size: 1rem;
+
+    color: #123b68;
+}
+
+
+/* =====================================
+   FOOTER TEXT
+===================================== */
+
+.footer-col p {
+    color: #54708c;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   FOOTER LIST
+===================================== */
+
+.footer-col ul {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+
+/* =====================================
+   FOOTER LINKS
+===================================== */
+
+.footer-col ul li a {
+    display: inline-block;
+
+    color: #2c6fae;
+
+    font-size: 0.9rem;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #0b4f91;
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================
+   FOOTER BOTTOM
+===================================== */
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    max-width: 1100px;
+
+    margin: 36px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #c9dff5;
+
+    color: #71879b;
+
+    font-size: 0.82rem;
+}
+
+
+/* =====================================
+   DARK MODE
+===================================== */
+
+html.darkmode body {
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #172b40,
+            #0d2233
+        );
+
+    color: #eaf6ff;
+}
+
+
+/* NAVBAR DARK */
+
+html.darkmode nav {
+    background: rgba(10, 25, 40, 0.55);
+
+    border-color: rgba(160, 215, 245, 0.25);
+}
+
+html.darkmode nav a {
+    color: #eaf6ff;
+}
+
+html.darkmode nav a:hover {
+    color: #7edcff;
+}
+
+
+/* THEME BUTTON DARK */
+
+html.darkmode .theme-btn {
+    background: rgba(20, 45, 65, 0.7);
+
+    border-color: rgba(150, 220, 250, 0.3);
+
+    color: #eaf6ff;
+}
+
+
+/* HERO DARK */
+
+html.darkmode .surface-hero {
+    background:
+        linear-gradient(
+            180deg,
+            #123d5b,
+            #0b3049,
+            #071e31
+        );
+}
+
+
+/* WAVE DARK */
+
+html.darkmode .hero-wave path {
+    fill: #172b40;
+}
+
+
+/* STAGE CARDS DARK */
+
+html.darkmode .capsule {
+    background:
+        rgba(18, 34, 48, 0.92);
+
+    border-color:
+        rgba(140, 205, 235, 0.18);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.35);
+}
+
+html.darkmode .capsule h2 {
+    color: #e5f7ff;
+}
+
+html.darkmode .intro-text,
+html.darkmode .src-item p,
+html.darkmode .tab-content {
+    color: #a9c5d7;
+}
+
+html.darkmode .src-item {
+    border-color: #294355;
+}
+
+html.darkmode .src-item h3 {
+    color: #83d7fa;
+}
+
+html.darkmode .src-icon {
+    background: #17394e;
+}
+
+
+/* TABS DARK */
+
+html.darkmode .info-tab {
+    background: #19394d;
+
+    color: #9edaf2;
+}
+
+html.darkmode .info-tab:hover,
+html.darkmode .info-tab.active {
+    background: #147ca9;
+
+    color: white;
+}
+
+
+/* CHECKLIST DARK */
+
+html.darkmode .check-list div {
+    color: #aac5d5;
+}
+
+html.darkmode .check-list span {
+    background: #173e30;
+
+    color: #68d49b;
+}
+
+
+/* LEARN MORE DARK */
+
+html.darkmode .learn-more {
+    color: #62cfff;
+}
+
+
+/* THERMOMETER DARK */
+
+html.darkmode .thermo-tube,
+html.darkmode .thermo-bulb {
+    background: rgba(255, 255, 255, 0.06);
+
+    border-color: rgba(180, 225, 245, 0.35);
+}
+
+html.darkmode .thermo-scale,
+html.darkmode .thermo-legend li {
+    color: #9ebdce;
+}
+
+html.darkmode .tank-caption {
+    color: #7d97a8;
+}
+
+
+/* FOOTER DARK */
+
+html.darkmode footer {
+    background: #0b1826;
+
+    border-top-color: #213a4d;
+}
+
+html.darkmode .footer-col h4 {
+    color: #bfeaff;
+}
+
+html.darkmode .footer-col p {
+    color: #9cb8ca;
+}
+
+html.darkmode .footer-col ul li a {
+    color: #79c9ee;
+}
+
+html.darkmode .footer-col ul li a:hover {
+    color: #bcecff;
+}
+
+html.darkmode .footer-bottom {
+    border-top-color: #294255;
+
+    color: #7f9aaa;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 991px) {
+
+    header:not(.surface-hero) {
+        padding: 18px 20px;
+    }
+
+    nav a {
+        margin: 0 8px;
+
+        font-size: 14px;
+    }
+
+    .row-caps {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .tank-column {
+        order: 2;
+    }
+
+    .source-column {
+        order: 1;
+    }
+
+    .source-column:last-child {
+        order: 3;
+    }
+
+    .capsule {
+        width: 100%;
+
+        padding: 32px 28px;
+
+        border-radius: 38px;
+
+        transform: none;
+    }
+
+    .capsule:hover {
+        transform: translateY(-5px);
+    }
+
+    .thermo {
+        --tube-h: 145px;
+        --bulb-h: 54px;
+
+        width: 60px;
+        height: 190px;
+    }
+
+    .thermo-tube {
+        width: 24px;
+    }
+
+    .thermo-bulb {
+        width: 54px;
+    }
+
+    .boat {
+        font-size: 38px;
+    }
+
+    .boat-one,
+    .boat-two {
+        top: 68%;
+    }
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 720px) {
+
+    header:not(.surface-hero) {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        border-radius: 25px;
+
+        padding: 8px;
+    }
+
+    nav a {
+        margin: 5px 7px;
+
+        font-size: 12px;
+    }
+
+    .header-text {
+        display: flex;
+
+        justify-content: center;
+    }
+
+    .surface-hero {
+        height: 250px;
+    }
+
+    .hero-title span {
+        font-size: 42px;
+    }
+
+    .hero-title strong {
+        font-size: 48px;
+    }
+
+    .boat {
+        font-size: 30px;
+    }
+
+    .boat-one,
+    .boat-two {
+        top: 66%;
+    }
+
+    .stage {
+        width: 92%;
+
+        margin-top: -15px;
+
+        padding-bottom: 45px;
+    }
+
+    .capsule {
+        padding: 28px 22px;
+
+        border-radius: 30px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .footer-col ul li a:hover {
+        transform: translateY(-2px);
+    }
+}
+
+
+/* =====================================
+   VERY SMALL SCREENS
+===================================== */
+
+@media (max-width: 450px) {
+
+    nav a {
+        margin: 4px;
+
+        font-size: 11px;
+    }
+
+    .hero-title span {
+        font-size: 34px;
+    }
+
+    .hero-title strong {
+        font-size: 38px;
+    }
+
+    .capsule h2 {
+        font-size: 24px;
+    }
+
+    .src-item {
+        gap: 10px;
+    }
+
+    .src-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .boat {
+        font-size: 24px;
+    }
+}
+
+
+/* =====================================
+   REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
