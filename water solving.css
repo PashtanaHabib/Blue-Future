@@ -642,3 +642,142 @@ body {
     min-height: 130px;
   }
 }
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+  .water-solving {
+    padding: 40px 15px 50px;
+  }
+
+  .top-label {
+    gap: 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+  }
+
+  .top-label span {
+    width: 35px;
+  }
+
+  .section-title h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+  .title-description {
+    font-size: 15px;
+
+    line-height: 1.5;
+  }
+
+  .solutions-area {
+    margin-top: 10px;
+  }
+
+  .solution-item {
+    min-height: auto;
+
+    margin: 22px 0;
+
+    gap: 15px;
+  }
+
+  .solution-icon {
+    width: 68px;
+    height: 68px;
+
+    font-size: 28px;
+  }
+
+  .solution-text h3 {
+    font-size: 18px;
+  }
+
+  .solution-text p {
+    font-size: 13px;
+  }
+
+  .water-center {
+    height: 430px;
+  }
+
+  .water-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ring-one {
+    width: 250px;
+    height: 250px;
+  }
+
+  .ring-two {
+    width: 330px;
+    height: 330px;
+  }
+
+  .water-droplet-image {
+    width: 280px;
+  }
+
+  .small-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dot-one {
+    top: 30px;
+    left: 30px;
+  }
+
+  .dot-two {
+    top: 30px;
+    right: 30px;
+  }
+
+  .dot-three {
+    bottom: 30px;
+    left: 30px;
+  }
+
+  .dot-four {
+    bottom: 30px;
+    right: 30px;
+  }
+
+  .bottom-heading h2 {
+    font-size: 28px;
+  }
+
+  .bottom-label p {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+  }
+
+  .bottom-description {
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+  .build-card {
+    min-height: auto;
+  }
+
+  .every-drop {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+  }
+
+  .every-drop span {
+    width: 35px;
+  }
+}
