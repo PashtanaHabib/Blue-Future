@@ -8,11 +8,35 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  background: #020d17;
-  color: white;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100%;
 }
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #cbe6ee;
+  color: #0a1d2e;
+
+  font-family: Arial, sans-serif;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+main {
+  flex: 1;
+}
+
+/* =====================================================
+   WATER SOLVING
+===================================================== */
 
 .water-solving {
   min-height: 100vh;
@@ -26,10 +50,14 @@ body {
   background:
     radial-gradient(
       circle at 50% 42%,
-      rgba(0, 160, 220, 0.18),
+      rgba(38, 148, 195, 0.18),
       transparent 34%
     ),
-    linear-gradient(180deg, #020d16 0%, #031827 55%, #020b14 100%);
+    linear-gradient(180deg, #cbe6ee 0%, #c4e5f5 55%, #b3cdda 100%);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 /* =====================================================
@@ -39,7 +67,7 @@ body {
 .background-circle {
   position: absolute;
 
-  border: 1px solid rgba(0, 174, 255, 0.15);
+  border: 1px solid rgba(32, 125, 169, 0.25);
 
   border-radius: 50%;
 
@@ -77,7 +105,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(0, 180, 255, 0.25),
+    rgba(32, 125, 169, 0.35),
     transparent
   );
 }
@@ -108,7 +136,7 @@ body {
 
   gap: 30px;
 
-  color: #0cc7ff;
+  color: #207da9;
 
   font-size: 13px;
 
@@ -122,7 +150,7 @@ body {
 
   height: 1px;
 
-  background: #1a9dca;
+  background: #207da9;
 }
 
 .section-title h1 {
@@ -138,17 +166,17 @@ body {
 
   letter-spacing: -3px;
 
-  color: #f4f6f8;
+  color: #0a1d2e;
 }
 
 .section-title h1 span {
-  color: #0cbdf3;
+  color: #207da9;
 }
 
 .title-description {
   margin-top: 18px;
 
-  color: #d5e1e8;
+  color: #173d50;
 
   font-size: 20px;
 }
@@ -156,13 +184,13 @@ body {
 .title-water-icon {
   margin-top: 22px;
 
-  color: #08c5fa;
+  color: #2694c3;
 
   font-size: 28px;
 
   text-shadow:
-    0 0 10px #00bfff,
-    0 0 25px rgba(0, 191, 255, 0.7);
+    0 0 10px rgba(54, 174, 213, 0.8),
+    0 0 25px rgba(54, 174, 213, 0.45);
 }
 
 /* =====================================================
@@ -200,23 +228,23 @@ body {
   justify-content: center;
   align-items: center;
 
-  border: 1px solid #079fd5;
+  border: 1px solid #207da9;
 
   border-radius: 50%;
 
-  color: #10c8ff;
+  color: #2694c3;
 
   font-size: 37px;
 
   background: radial-gradient(
     circle,
-    rgba(0, 180, 255, 0.18),
-    rgba(0, 100, 160, 0.03)
+    rgba(54, 174, 213, 0.18),
+    rgba(32, 125, 169, 0.05)
   );
 
   box-shadow:
-    0 0 18px rgba(0, 174, 255, 0.2),
-    inset 0 0 18px rgba(0, 174, 255, 0.08);
+    0 0 18px rgba(32, 125, 169, 0.2),
+    inset 0 0 18px rgba(54, 174, 213, 0.08);
 
   transition: 0.3s;
 }
@@ -224,7 +252,7 @@ body {
 .solution-icon:hover {
   transform: scale(1.08);
 
-  box-shadow: 0 0 25px rgba(0, 195, 255, 0.45);
+  box-shadow: 0 0 25px rgba(54, 174, 213, 0.45);
 }
 
 .solution-text {
@@ -234,7 +262,7 @@ body {
 .solution-text span {
   display: inline-block;
 
-  color: #08c7ff;
+  color: #207da9;
 
   font-size: 14px;
 
@@ -252,11 +280,11 @@ body {
 
   margin-bottom: 8px;
 
-  color: #f4f6f7;
+  color: #0a1d2e;
 }
 
 .solution-text p {
-  color: #a9c3d0;
+  color: #173d50;
 
   font-size: 15px;
 
@@ -290,7 +318,7 @@ body {
 
   border-radius: 50%;
 
-  background: rgba(0, 178, 255, 0.14);
+  background: rgba(54, 174, 213, 0.18);
 
   filter: blur(55px);
 }
@@ -306,7 +334,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  border: 1px solid rgba(0, 183, 255, 0.45);
+  border: 1px solid rgba(32, 125, 169, 0.45);
 
   border-radius: 50%;
 }
@@ -316,7 +344,7 @@ body {
 
   border-radius: 50%;
 
-  border: 1px solid rgba(0, 183, 255, 0.22);
+  border: 1px solid rgba(32, 125, 169, 0.25);
 }
 
 .ring-one {
@@ -335,15 +363,17 @@ body {
   max-width: 90%;
 
   position: relative;
+
   border-radius: 50%;
+
   z-index: 3;
 
   object-fit: contain;
 
   mix-blend-mode: screen;
 
-  filter: drop-shadow(0 0 12px rgba(0, 196, 255, 0.8))
-    drop-shadow(0 0 30px rgba(0, 156, 255, 0.5));
+  filter: drop-shadow(0 0 12px rgba(54, 174, 213, 0.8))
+    drop-shadow(0 0 30px rgba(32, 125, 169, 0.5));
 
   transition: transform 0.15s ease;
 }
@@ -360,9 +390,9 @@ body {
 
   border-radius: 50%;
 
-  background: #08c4ff;
+  background: #36aed5;
 
-  box-shadow: 0 0 10px #08c4ff;
+  box-shadow: 0 0 10px #36aed5;
 
   z-index: 4;
 }
@@ -413,13 +443,13 @@ body {
 
   height: 1px;
 
-  background: #168db8;
+  background: #207da9;
 }
 
 .bottom-label p {
   margin: 0;
 
-  color: #0ac6fa;
+  color: #207da9;
 
   font-size: 13px;
 
@@ -433,11 +463,11 @@ body {
 
   font-size: 35px;
 
-  color: #f4f6f8;
+  color: #0a1d2e;
 }
 
 .bottom-description {
-  color: #a9c0ca;
+  color: #173d50;
 
   font-size: 15px;
 
@@ -463,30 +493,31 @@ body {
 
   padding: 28px;
 
-  border: 1px solid rgba(0, 174, 255, 0.6);
+  border: 1px solid rgba(32, 125, 169, 0.6);
 
   border-radius: 14px;
 
   background: linear-gradient(
     145deg,
-    rgba(0, 91, 132, 0.13),
-    rgba(0, 20, 35, 0.5)
+    rgba(38, 148, 195, 0.16),
+    rgba(159, 208, 231, 0.22)
   );
 
-  box-shadow: inset 0 0 25px rgba(0, 174, 255, 0.04);
+  box-shadow: inset 0 0 25px rgba(32, 125, 169, 0.06);
 
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .build-card:hover {
   transform: translateY(-8px);
 
-  border-color: #00c5ff;
+  border-color: #2694c3;
 
-  box-shadow: 0 0 25px rgba(0, 174, 255, 0.18);
+  box-shadow: 0 0 25px rgba(32, 125, 169, 0.18);
 }
 
 .build-icon {
@@ -502,17 +533,17 @@ body {
 
   margin-right: 20px;
 
-  border: 1px solid #04baf0;
+  border: 1px solid #207da9;
 
   border-radius: 50%;
 
-  color: #08c8ff;
+  color: #2694c3;
 
   font-size: 30px;
 }
 
 .card-number {
-  color: #08c8ff;
+  color: #207da9;
 
   font-size: 14px;
 
@@ -528,11 +559,11 @@ body {
 
   font-size: 21px;
 
-  color: white;
+  color: #0a1d2e;
 }
 
 .build-card p {
-  color: #a9c3cf;
+  color: #173d50;
 
   font-size: 14px;
 
@@ -542,15 +573,15 @@ body {
 }
 
 .learn-button {
-  border: 1px solid #09bdf4;
+  border: 1px solid #207da9;
 
   border-radius: 30px;
 
   padding: 8px 18px;
 
-  color: #cdeff9;
+  color: #0c2c3f;
 
-  background: rgba(0, 156, 211, 0.1);
+  background: rgba(38, 148, 195, 0.1);
 
   font-size: 13px;
 
@@ -562,9 +593,9 @@ body {
 }
 
 .learn-button:hover {
-  background: #08aeda;
+  background: #207da9;
 
-  color: white;
+  color: #cbe6ee;
 }
 
 /* =====================================================
@@ -585,7 +616,7 @@ body {
 
   margin-top: 35px;
 
-  color: #08c7ff;
+  color: #207da9;
 
   font-size: 12px;
 
@@ -597,11 +628,749 @@ body {
 
   height: 1px;
 
-  background: #168db8;
+  background: #207da9;
 }
 
 .every-drop i {
   font-size: 18px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 35px;
+
+  min-height: 105px;
+
+  background: #cbe6ee;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+header img {
+  width: 40px;
+  height: 45px;
+
+  object-fit: contain;
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+nav {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 8px 15px;
+
+  border: 1px solid rgba(32, 125, 169, 0.45);
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  box-shadow: 5px 5px 12px rgba(10, 29, 46, 0.12);
+
+  backdrop-filter: blur(4px);
+
+  font-family: Fisherman;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+nav a {
+  color: #0a1d2e;
+
+  text-decoration: none;
+
+  margin: 0 15px;
+
+  font-size: 18px;
+
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #207da9;
+}
+
+/* =====================================================
+   HEADER TITLE
+===================================================== */
+
+.header-text {
+  font-family: Fisherman;
+
+  font-size: 12px;
+}
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+.theme-btn {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 8px 14px;
+
+  border: 1px solid rgba(32, 125, 169, 0.45);
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  color: #0a1d2e;
+
+  font-family: Fisherman;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(5px);
+
+  transition: 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: rgba(54, 174, 213, 0.2);
+
+  transform: translateY(-2px);
+}
+
+#theme-icon {
+  font-size: 17px;
+}
+
+/* =====================================================
+   MELTING TEXT
+===================================================== */
+
+.melting-text-container {
+  position: relative;
+
+  display: inline-block;
+}
+
+.logo {
+  font-family: Fisherman;
+}
+
+.melting-text {
+  position: relative;
+
+  margin: 0;
+
+  font-family: Fisherman;
+
+  font-size: 2rem;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  background: linear-gradient(90deg, #2694c3, #207da9, #36aed5);
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+
+  animation: melt 3s ease-in-out infinite;
+}
+
+/* =====================================================
+   MELTING EFFECT
+===================================================== */
+
+.melting-text::before,
+.melting-text::after {
+  content: "BLUE FUTURE";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(90deg, #207da9, #0c2c3f, #36aed5);
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+
+  pointer-events: none;
+
+  transform-origin: top center;
+
+  z-index: -1;
+
+  animation: drip 3s ease-in-out infinite;
+}
+
+/* =====================================================
+   BLUR EFFECT
+===================================================== */
+
+.melting-text::after {
+  filter: blur(6px);
+
+  opacity: 0.25;
+
+  z-index: -2;
+}
+
+/* =====================================================
+   MELT ANIMATION
+===================================================== */
+
+@keyframes melt {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* =====================================================
+   DRIP ANIMATION
+===================================================== */
+
+@keyframes drip {
+  0%,
+  100% {
+    transform: scaleY(1);
+
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scaleY(1.15);
+
+    opacity: 0.7;
+  }
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 50px 6vw 25px;
+
+  margin-top: 20px;
+
+  background: #9fd0e7;
+
+  border-top: 1px solid #84a1af;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =====================================================
+   FOOTER IMAGE
+===================================================== */
+
+footer img {
+  width: 40px;
+
+  height: 45px;
+
+  object-fit: contain;
+}
+
+/* =====================================================
+   FOOTER GRID
+===================================================== */
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr 1fr;
+
+  gap: 36px;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+/* =====================================================
+   FOOTER TITLES
+===================================================== */
+
+.footer-col h4 {
+  margin-bottom: 14px;
+
+  font-size: 1rem;
+
+  color: #0c2c3f;
+}
+
+/* =====================================================
+   FOOTER TEXT
+===================================================== */
+
+.footer-col p {
+  color: #173d50;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   FOOTER LIST
+===================================================== */
+
+.footer-col ul {
+  padding: 0;
+
+  margin: 0;
+
+  list-style: none;
+}
+
+/* =====================================================
+   FOOTER LIST ITEMS
+===================================================== */
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+/* =====================================================
+   FOOTER LINKS
+===================================================== */
+
+.footer-col ul li a {
+  display: inline-block;
+
+  color: #207da9;
+
+  font-size: 0.9rem;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* =====================================================
+   LINK HOVER
+===================================================== */
+
+.footer-col ul li a:hover {
+  color: #0c2c3f;
+
+  transform: translateX(5px);
+}
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  max-width: 1100px;
+
+  margin: 36px auto 0;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #84a1af;
+
+  color: #173d50;
+
+  font-size: 0.82rem;
+}
+
+/* =====================================================
+   THEME TRANSITION
+===================================================== */
+
+body,
+header,
+.water-solving,
+footer,
+.build-card,
+.solution-icon,
+.learn-button,
+nav,
+.theme-btn {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =====================================================
+   DARK MODE - FULL PAGE
+===================================================== */
+
+html.darkmode body {
+  background: #080e15;
+
+  color: #cbe6ee;
+}
+
+html.darkmode header {
+  background: #080e1563;
+}
+
+/* =====================================================
+   DARK WATER SOLVING
+===================================================== */
+
+html.darkmode .water-solving {
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(54, 174, 213, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(180deg, #080e15 0%, #0a1d2e 55%, #080e15 100%);
+
+  color: #cbe6ee;
+}
+
+html.darkmode .background-circle {
+  border-color: rgba(54, 174, 213, 0.18);
+}
+
+html.darkmode .background-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(54, 174, 213, 0.25),
+    transparent
+  );
+}
+
+/* =====================================================
+   DARK TITLE
+===================================================== */
+
+html.darkmode .top-label {
+  color: #36aed5;
+}
+
+html.darkmode .top-label span {
+  background: #207da9;
+}
+
+html.darkmode .section-title h1 {
+  color: #cbe6ee;
+}
+
+html.darkmode .section-title h1 span {
+  color: #36aed5;
+}
+
+html.darkmode .title-description {
+  color: #84a1af;
+}
+
+html.darkmode .title-water-icon {
+  color: #36aed5;
+
+  text-shadow:
+    0 0 10px #36aed5,
+    0 0 25px rgba(54, 174, 213, 0.7);
+}
+
+/* =====================================================
+   DARK SOLUTIONS
+===================================================== */
+
+html.darkmode .solution-icon {
+  border-color: #207da9;
+
+  color: #36aed5;
+
+  background: radial-gradient(
+    circle,
+    rgba(54, 174, 213, 0.18),
+    rgba(12, 44, 63, 0.03)
+  );
+
+  box-shadow:
+    0 0 18px rgba(54, 174, 213, 0.2),
+    inset 0 0 18px rgba(54, 174, 213, 0.08);
+}
+
+html.darkmode .solution-text span {
+  color: #36aed5;
+}
+
+html.darkmode .solution-text h3 {
+  color: #cbe6ee;
+}
+
+html.darkmode .solution-text p {
+  color: #84a1af;
+}
+
+/* =====================================================
+   DARK CENTER WATER
+===================================================== */
+
+html.darkmode .center-glow {
+  background: rgba(54, 174, 213, 0.14);
+}
+
+html.darkmode .water-circle {
+  border-color: rgba(54, 174, 213, 0.45);
+}
+
+html.darkmode .water-rings {
+  border-color: rgba(54, 174, 213, 0.22);
+}
+
+html.darkmode .water-droplet-image {
+  filter: drop-shadow(0 0 12px rgba(54, 174, 213, 0.8))
+    drop-shadow(0 0 30px rgba(32, 125, 169, 0.5));
+}
+
+html.darkmode .small-dot {
+  background: #36aed5;
+
+  box-shadow: 0 0 10px #36aed5;
+}
+
+/* =====================================================
+   DARK BOTTOM HEADING
+===================================================== */
+
+html.darkmode .bottom-label span {
+  background: #207da9;
+}
+
+html.darkmode .bottom-label p {
+  color: #36aed5;
+}
+
+html.darkmode .bottom-heading h2 {
+  color: #cbe6ee;
+}
+
+html.darkmode .bottom-description {
+  color: #84a1af;
+}
+
+/* =====================================================
+   DARK CARDS
+===================================================== */
+
+html.darkmode .build-card {
+  background: linear-gradient(
+    145deg,
+    rgba(23, 61, 80, 0.7),
+    rgba(8, 14, 21, 0.75)
+  );
+
+  border-color: rgba(32, 125, 169, 0.6);
+
+  box-shadow: inset 0 0 25px rgba(54, 174, 213, 0.04);
+}
+
+html.darkmode .build-card:hover {
+  border-color: #36aed5;
+
+  box-shadow: 0 0 25px rgba(54, 174, 213, 0.18);
+}
+
+html.darkmode .build-icon {
+  border-color: #207da9;
+
+  color: #36aed5;
+}
+
+html.darkmode .card-number {
+  color: #36aed5;
+}
+
+html.darkmode .build-card h3 {
+  color: #cbe6ee;
+}
+
+html.darkmode .build-card p {
+  color: #84a1af;
+}
+
+html.darkmode .learn-button {
+  border-color: #2694c3;
+
+  color: #9fd0e7;
+
+  background: rgba(38, 148, 195, 0.1);
+}
+
+html.darkmode .learn-button:hover {
+  background: #207da9;
+
+  color: #cbe6ee;
+}
+
+/* =====================================================
+   DARK EVERY DROP
+===================================================== */
+
+html.darkmode .every-drop {
+  color: #36aed5;
+}
+
+html.darkmode .every-drop span {
+  background: #207da9;
+}
+
+/* =====================================================
+   DARK NAVBAR
+===================================================== */
+
+html.darkmode nav {
+  background: rgba(8, 14, 21, 0.82);
+
+  border-color: rgba(54, 174, 213, 0.4);
+
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+html.darkmode nav a {
+  color: #cbe6ee;
+}
+
+html.darkmode nav a:hover {
+  color: #36aed5;
+}
+
+/* =====================================================
+   DARK THEME BUTTON
+===================================================== */
+
+html.darkmode .theme-btn {
+  background: rgba(54, 174, 213, 0.12);
+
+  border-color: rgba(54, 174, 213, 0.55);
+
+  color: #36aed5;
+}
+
+html.darkmode .theme-btn:hover {
+  background: rgba(54, 174, 213, 0.2);
+}
+
+/* =====================================================
+   DARK MELTING TEXT
+===================================================== */
+
+html.darkmode .melting-text {
+  background: linear-gradient(90deg, #36aed5, #207da9, #9fd0e7);
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+html.darkmode .melting-text::before,
+html.darkmode .melting-text::after {
+  background: linear-gradient(90deg, #207da9, #0c2c3f, #36aed5);
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* =====================================================
+   DARK FOOTER
+===================================================== */
+
+html.darkmode footer {
+  background: #0a1d2e;
+
+  border-top-color: #173d50;
+}
+
+html.darkmode .footer-col h4 {
+  color: #9fd0e7;
+}
+
+html.darkmode .footer-col p {
+  color: #84a1af;
+}
+
+html.darkmode .footer-col ul li a {
+  color: #36aed5;
+}
+
+html.darkmode .footer-col ul li a:hover {
+  color: #9fd0e7;
+}
+
+html.darkmode .footer-bottom {
+  border-top-color: #173d50;
+
+  color: #84a1af;
 }
 
 /* =====================================================
@@ -641,6 +1410,16 @@ body {
   .solution-item {
     min-height: 130px;
   }
+
+  header {
+    padding: 20px;
+  }
+
+  nav a {
+    margin: 0 7px;
+
+    font-size: 14px;
+  }
 }
 
 /* =====================================================
@@ -648,6 +1427,28 @@ body {
 ===================================================== */
 
 @media (max-width: 767px) {
+  header {
+    flex-direction: column;
+
+    gap: 18px;
+
+    padding: 20px 15px;
+  }
+
+  nav {
+    width: 100%;
+
+    overflow-x: auto;
+
+    justify-content: flex-start;
+  }
+
+  nav a {
+    margin: 0 10px;
+
+    font-size: 13px;
+  }
+
   .water-solving {
     padding: 40px 15px 50px;
   }
@@ -690,6 +1491,7 @@ body {
 
   .solution-icon {
     width: 68px;
+
     height: 68px;
 
     font-size: 28px;
@@ -709,16 +1511,19 @@ body {
 
   .water-circle {
     width: 300px;
+
     height: 300px;
   }
 
   .ring-one {
     width: 250px;
+
     height: 250px;
   }
 
   .ring-two {
     width: 330px;
+
     height: 330px;
   }
 
@@ -728,26 +1533,31 @@ body {
 
   .small-dot {
     width: 8px;
+
     height: 8px;
   }
 
   .dot-one {
     top: 30px;
+
     left: 30px;
   }
 
   .dot-two {
     top: 30px;
+
     right: 30px;
   }
 
   .dot-three {
     bottom: 30px;
+
     left: 30px;
   }
 
   .dot-four {
     bottom: 30px;
+
     right: 30px;
   }
 
@@ -780,393 +1590,7 @@ body {
   .every-drop span {
     width: 35px;
   }
-}
-/* =====================================
-   PAGE LAYOUT
-===================================== */
 
-html,
-body {
-  margin: 0;
-  min-height: 100%;
-}
-
-body {
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-
-  background-color: #444c63;
-}
-
-main {
-  flex: 1;
-}
-
-/* =====================================
-   HEADER
-===================================== */
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 20px 35px;
-}
-
-/* =====================================
-   LOGO
-===================================== */
-
-header img {
-  width: 40px;
-  height: 45px;
-}
-.melting-text-container {
-  position: relative;
-  display: inline-block;
-}
-
-.logo {
-  font-family: Fisherman;
-}
-
-.melting-text {
-  position: relative;
-
-  margin: 0;
-
-  font-family: Fisherman;
-  font-size: 2rem;
-  font-weight: bold;
-
-  text-transform: uppercase;
-
-  background: linear-gradient(90deg, #61b8ff, #1a3ea1, #4c81e2);
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  color: transparent;
-
-  animation: melt 3s ease-in-out infinite;
-}
-
-/* =====================================
-   MELTING EFFECT
-===================================== */
-
-.melting-text::before,
-.melting-text::after {
-  content: "BLUE FUTURE";
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background: linear-gradient(90deg, #4c81e2, #464f9e, #4b7ae0);
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  color: transparent;
-
-  pointer-events: none;
-
-  transform-origin: top center;
-
-  z-index: -1;
-
-  animation: drip 3s ease-in-out infinite;
-}
-
-/* =====================================
-   BLUR EFFECT
-===================================== */
-
-.melting-text::after {
-  filter: blur(6px);
-  opacity: 0.25;
-  z-index: -2;
-}
-
-/* =====================================
-   MELT ANIMATION
-===================================== */
-
-@keyframes melt {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(6px);
-  }
-}
-
-/* =====================================
-   DRIP ANIMATION
-===================================== */
-
-@keyframes drip {
-  0%,
-  100% {
-    transform: scaleY(1);
-    opacity: 0.5;
-  }
-
-  50% {
-    transform: scaleY(1.15);
-    opacity: 0.7;
-  }
-}
-
-/* =====================================
-   NAVIGATION
-===================================== */
-
-nav {
-  display: flex;
-  align-items: center;
-
-  padding: 8px 15px;
-
-  border: 1px solid #ffffff75;
-  border-radius: 50px;
-
-  background: #ffffff2f;
-
-  box-shadow: 5px 5px 12px #c4d6f035;
-
-  backdrop-filter: blur(4px);
-
-  font-family: Fisherman;
-}
-
-nav a {
-  color: white;
-
-  text-decoration: none;
-
-  margin: 0 15px;
-
-  font-size: 18px;
-
-  transition: 0.3s ease;
-}
-
-nav a:hover {
-  color: #bdefff;
-}
-
-/* =====================================
-   HEADER TITLE
-===================================== */
-
-.header-text {
-  font-family: Fisherman;
-  font-size: 12px;
-}
-
-.header-text h1 {
-  margin: 0;
-}
-
-/* =====================================
-   THEME BUTTON
-===================================== */
-
-.theme-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-
-  padding: 8px 14px;
-
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 30px;
-
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-
-  font-family: Fisherman;
-  font-size: 15px;
-
-  cursor: pointer;
-
-  backdrop-filter: blur(5px);
-
-  transition: 0.3s ease;
-}
-
-.theme-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-#theme-icon {
-  font-size: 17px;
-}
-
-/* =====================================
-   BODY
-===================================== */
-
-body {
-  margin: 0;
-  background-color: #444c63;
-}
-
-/* =====================================
-   FOOTER
-===================================== */
-
-footer {
-  position: relative;
-  z-index: 2;
-
-  padding: 50px 6vw 25px;
-  margin-top: 20px;
-
-  background: #eaf4ff;
-
-  border-top: 1px solid #c9dff5;
-}
-
-/* =====================================
-   FOOTER IMAGE
-===================================== */
-
-footer img {
-  width: 40px;
-  height: 45px;
-  object-fit: contain;
-}
-
-/* =====================================
-   FOOTER GRID
-===================================== */
-
-.footer-grid {
-  display: grid;
-
-  grid-template-columns: 1.4fr 1fr 1fr;
-
-  gap: 36px;
-
-  max-width: 1100px;
-
-  margin: 0 auto;
-}
-
-/* =====================================
-   FOOTER TITLES
-===================================== */
-
-.footer-col h4 {
-  margin-bottom: 14px;
-
-  font-size: 1rem;
-
-  color: #123b68;
-}
-
-/* =====================================
-   FOOTER TEXT
-===================================== */
-
-.footer-col p {
-  color: #54708c;
-
-  font-size: 0.9rem;
-
-  line-height: 1.7;
-}
-
-/* =====================================
-   FOOTER LIST
-===================================== */
-
-.footer-col ul {
-  padding: 0;
-  margin: 0;
-
-  list-style: none;
-}
-
-/* =====================================
-   FOOTER LIST ITEMS
-===================================== */
-
-.footer-col ul li {
-  margin-bottom: 10px;
-}
-
-/* =====================================
-   FOOTER LINKS
-===================================== */
-
-.footer-col ul li a {
-  display: inline-block;
-
-  color: #2c6fae;
-
-  font-size: 0.9rem;
-
-  text-decoration: none;
-
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-/* =====================================
-   LINK HOVER
-===================================== */
-
-.footer-col ul li a:hover {
-  color: #0b4f91;
-
-  transform: translateX(5px);
-}
-
-/* =====================================
-   FOOTER BOTTOM
-===================================== */
-
-.footer-bottom {
-  display: flex;
-
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  max-width: 1100px;
-
-  margin: 36px auto 0;
-
-  padding-top: 20px;
-
-  border-top: 1px solid #c9dff5;
-
-  color: #71879b;
-
-  font-size: 0.82rem;
-}
-
-/* =====================================
-   MOBILE
-===================================== */
-
-@media (max-width: 720px) {
   .footer-grid {
     grid-template-columns: 1fr;
 
@@ -1182,4 +1606,52 @@ footer img {
   .footer-col ul li a:hover {
     transform: translateY(-2px);
   }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+  nav {
+    padding: 7px 10px;
+  }
+
+  nav a {
+    margin: 0 8px;
+
+    font-size: 11px;
+  }
+}
+
+.nav-link {
+  position: relative;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0878b8;
+}
+
+.nav-link.active {
+  color: #0878b8;
+}
+
+/* خط زیر لینک فعال */
+
+.nav-link.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 100%;
+  height: 2px;
+
+  background: #0878b8;
+  border-radius: 10px;
 }

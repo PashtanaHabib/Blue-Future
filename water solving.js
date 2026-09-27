@@ -1,15 +1,7 @@
-// =====================================================
-// WATER SOLVING JAVASCRIPT
-// =====================================================
-
-// =====================================================
-// PAGE LOAD
-// =====================================================
-
 document.addEventListener("DOMContentLoaded", function () {
-  // ===================================================
-  // SOLUTION CARDS
-  // ===================================================
+  /* =========================
+       BUILD CARDS
+    ========================= */
 
   const cards = document.querySelectorAll(".build-card");
 
@@ -23,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ===================================================
-  // LEARN MORE BUTTONS
-  // ===================================================
+  /* =========================
+       LEARN BUTTONS
+    ========================= */
 
   const buttons = document.querySelectorAll(".learn-button");
 
@@ -35,15 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ===================================================
-  // WATER DROPLET ANIMATION
-  // ===================================================
+  /* =========================
+       WATER DROPLET ANIMATION
+    ========================= */
 
   const droplet = document.querySelector(".water-droplet-image");
 
   if (droplet) {
     let position = 0;
-
     let direction = 1;
 
     setInterval(function () {
@@ -60,44 +51,95 @@ document.addEventListener("DOMContentLoaded", function () {
       droplet.style.transform = "translateY(" + position + "px)";
     }, 40);
   }
-});
-const themeBtn = document.getElementById("theme-btn");
-const themeIcon = document.getElementById("theme-icon");
-const themeText = document.getElementById("theme-text");
 
-const html = document.documentElement;
+  /* =========================
+       DARK / LIGHT MODE
+    ========================= */
 
-/* ==============================
-       LOAD SAVED THEME
-    ============================== */
+  const themeBtn = document.getElementById("theme-btn");
+  const themeIcon = document.getElementById("theme-icon");
+  const themeText = document.getElementById("theme-text");
+  const html = document.documentElement;
 
-const savedTheme = localStorage.getItem("blue-future-theme");
+  const savedTheme = localStorage.getItem("blue-future-theme");
 
-if (savedTheme === "dark") {
-  html.classList.add("darkmode");
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      html.classList.add("darkmode");
 
-  themeIcon.textContent = "☾";
-  themeText.textContent = "Dark";
-}
+      if (themeIcon) {
+        themeIcon.textContent = "☀";
+      }
 
-/* ==============================
-       TOGGLE THEME
-    ============================== */
+      if (themeText) {
+        themeText.textContent = "Light";
+      }
+    } else {
+      html.classList.remove("darkmode");
 
-themeBtn.addEventListener("click", () => {
-  html.classList.toggle("darkmode");
+      if (themeIcon) {
+        themeIcon.textContent = "☾";
+      }
 
-  /* Check current mode */
-
-  if (html.classList.contains("darkmode")) {
-    themeIcon.textContent = "☾";
-    themeText.textContent = "Dark";
-
-    localStorage.setItem("blue-future-theme", "dark");
-  } else {
-    themeIcon.textContent = "☀";
-    themeText.textContent = "Light";
-
-    localStorage.setItem("blue-future-theme", "light");
+      if (themeText) {
+        themeText.textContent = "Dark";
+      }
+    }
   }
+
+  /* حالت ذخیره‌شده را اجرا می‌کند */
+  if (savedTheme === "dark") {
+    applyTheme("dark");
+  } else {
+    applyTheme("light");
+  }
+
+  /* دکمه تغییر Theme */
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      const isDark = html.classList.toggle("darkmode");
+
+      if (isDark) {
+        if (themeIcon) {
+          themeIcon.textContent = "☀";
+        }
+
+        if (themeText) {
+          themeText.textContent = "Light";
+        }
+
+        localStorage.setItem("blue-future-theme", "dark");
+      } else {
+        if (themeIcon) {
+          themeIcon.textContent = "☾";
+        }
+
+        if (themeText) {
+          themeText.textContent = "Dark";
+        }
+
+        localStorage.setItem("blue-future-theme", "light");
+      }
+    });
+  }
+
+  /* =========================
+       ACTIVE NAV LINK
+    ========================= */
+
+  const currentPage =
+    decodeURIComponent(window.location.pathname.split("/").pop()) ||
+    "index.html";
+
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach(function (link) {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
 });
