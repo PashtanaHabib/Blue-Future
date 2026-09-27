@@ -1,0 +1,644 @@
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #020d17;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.water-solving {
+  min-height: 100vh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 55px 0 70px;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(0, 160, 220, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(180deg, #020d16 0%, #031827 55%, #020b14 100%);
+}
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background-circle {
+  position: absolute;
+
+  border: 1px solid rgba(0, 174, 255, 0.15);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.circle-one {
+  width: 700px;
+  height: 700px;
+
+  left: 50%;
+  top: 280px;
+
+  transform: translateX(-50%);
+}
+
+.circle-two {
+  width: 900px;
+  height: 900px;
+
+  left: 50%;
+  top: 180px;
+
+  transform: translateX(-50%);
+
+  opacity: 0.3;
+}
+
+.background-line {
+  position: absolute;
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 180, 255, 0.25),
+    transparent
+  );
+}
+
+.line-one {
+  top: 330px;
+}
+
+.line-two {
+  bottom: 310px;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.section-title {
+  position: relative;
+
+  z-index: 5;
+}
+
+.top-label {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+
+  color: #0cc7ff;
+
+  font-size: 13px;
+
+  letter-spacing: 7px;
+
+  margin-bottom: 22px;
+}
+
+.top-label span {
+  width: 80px;
+
+  height: 1px;
+
+  background: #1a9dca;
+}
+
+.section-title h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(55px, 6vw, 92px);
+
+  line-height: 1;
+
+  font-weight: bold;
+
+  letter-spacing: -3px;
+
+  color: #f4f6f8;
+}
+
+.section-title h1 span {
+  color: #0cbdf3;
+}
+
+.title-description {
+  margin-top: 18px;
+
+  color: #d5e1e8;
+
+  font-size: 20px;
+}
+
+.title-water-icon {
+  margin-top: 22px;
+
+  color: #08c5fa;
+
+  font-size: 28px;
+
+  text-shadow:
+    0 0 10px #00bfff,
+    0 0 25px rgba(0, 191, 255, 0.7);
+}
+
+/* =====================================================
+   MAIN SOLUTIONS
+===================================================== */
+
+.solutions-area {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 30px;
+}
+
+.solution-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  min-height: 150px;
+
+  margin: 10px 0;
+}
+
+.solution-icon {
+  flex-shrink: 0;
+
+  width: 88px;
+  height: 88px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #079fd5;
+
+  border-radius: 50%;
+
+  color: #10c8ff;
+
+  font-size: 37px;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 180, 255, 0.18),
+    rgba(0, 100, 160, 0.03)
+  );
+
+  box-shadow:
+    0 0 18px rgba(0, 174, 255, 0.2),
+    inset 0 0 18px rgba(0, 174, 255, 0.08);
+
+  transition: 0.3s;
+}
+
+.solution-icon:hover {
+  transform: scale(1.08);
+
+  box-shadow: 0 0 25px rgba(0, 195, 255, 0.45);
+}
+
+.solution-text {
+  flex: 1;
+}
+
+.solution-text span {
+  display: inline-block;
+
+  color: #08c7ff;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 8px;
+}
+
+.solution-text h3 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 21px;
+
+  margin-bottom: 8px;
+
+  color: #f4f6f7;
+}
+
+.solution-text p {
+  color: #a9c3d0;
+
+  font-size: 15px;
+
+  line-height: 1.55;
+
+  max-width: 260px;
+
+  margin: 0;
+}
+
+/* =====================================================
+   CENTER WATER
+===================================================== */
+
+.water-center {
+  height: 570px;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.center-glow {
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 178, 255, 0.14);
+
+  filter: blur(55px);
+}
+
+.water-circle {
+  width: 470px;
+  height: 470px;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgba(0, 183, 255, 0.45);
+
+  border-radius: 50%;
+}
+
+.water-rings {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(0, 183, 255, 0.22);
+}
+
+.ring-one {
+  width: 390px;
+  height: 390px;
+}
+
+.ring-two {
+  width: 520px;
+  height: 520px;
+}
+
+.water-droplet-image {
+  width: 340px;
+
+  max-width: 90%;
+
+  position: relative;
+  border-radius: 50%;
+  z-index: 3;
+
+  object-fit: contain;
+
+  mix-blend-mode: screen;
+
+  filter: drop-shadow(0 0 12px rgba(0, 196, 255, 0.8))
+    drop-shadow(0 0 30px rgba(0, 156, 255, 0.5));
+
+  transition: transform 0.15s ease;
+}
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.small-dot {
+  width: 12px;
+  height: 12px;
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: #08c4ff;
+
+  box-shadow: 0 0 10px #08c4ff;
+
+  z-index: 4;
+}
+
+.dot-one {
+  top: 55px;
+  left: 54px;
+}
+
+.dot-two {
+  top: 55px;
+  right: 54px;
+}
+
+.dot-three {
+  bottom: 55px;
+  left: 54px;
+}
+
+.dot-four {
+  bottom: 55px;
+  right: 54px;
+}
+
+/* =====================================================
+   BOTTOM HEADING
+===================================================== */
+
+.bottom-heading {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 15px;
+}
+
+.bottom-label {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+}
+
+.bottom-label span {
+  width: 70px;
+
+  height: 1px;
+
+  background: #168db8;
+}
+
+.bottom-label p {
+  margin: 0;
+
+  color: #0ac6fa;
+
+  font-size: 13px;
+
+  letter-spacing: 5px;
+}
+
+.bottom-heading h2 {
+  margin-top: 14px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 35px;
+
+  color: #f4f6f8;
+}
+
+.bottom-description {
+  color: #a9c0ca;
+
+  font-size: 15px;
+
+  margin-top: 8px;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.solution-cards {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 30px;
+}
+
+.build-card {
+  height: 100%;
+
+  min-height: 250px;
+
+  padding: 28px;
+
+  border: 1px solid rgba(0, 174, 255, 0.6);
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(0, 91, 132, 0.13),
+    rgba(0, 20, 35, 0.5)
+  );
+
+  box-shadow: inset 0 0 25px rgba(0, 174, 255, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.build-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #00c5ff;
+
+  box-shadow: 0 0 25px rgba(0, 174, 255, 0.18);
+}
+
+.build-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  float: left;
+
+  margin-right: 20px;
+
+  border: 1px solid #04baf0;
+
+  border-radius: 50%;
+
+  color: #08c8ff;
+
+  font-size: 30px;
+}
+
+.card-number {
+  color: #08c8ff;
+
+  font-size: 14px;
+
+  letter-spacing: 2px;
+}
+
+.build-card h3 {
+  clear: both;
+
+  padding-top: 22px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 21px;
+
+  color: white;
+}
+
+.build-card p {
+  color: #a9c3cf;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  margin-top: 10px;
+}
+
+.learn-button {
+  border: 1px solid #09bdf4;
+
+  border-radius: 30px;
+
+  padding: 8px 18px;
+
+  color: #cdeff9;
+
+  background: rgba(0, 156, 211, 0.1);
+
+  font-size: 13px;
+
+  transition: 0.3s;
+}
+
+.learn-button i {
+  margin-left: 8px;
+}
+
+.learn-button:hover {
+  background: #08aeda;
+
+  color: white;
+}
+
+/* =====================================================
+   EVERY DROP
+===================================================== */
+
+.every-drop {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 35px;
+
+  color: #08c7ff;
+
+  font-size: 12px;
+
+  letter-spacing: 5px;
+}
+
+.every-drop span {
+  width: 80px;
+
+  height: 1px;
+
+  background: #168db8;
+}
+
+.every-drop i {
+  font-size: 18px;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+  .water-solving {
+    padding-top: 45px;
+  }
+
+  .water-center {
+    height: 520px;
+
+    margin: 20px 0;
+  }
+
+  .water-circle {
+    width: 400px;
+    height: 400px;
+  }
+
+  .ring-one {
+    width: 330px;
+    height: 330px;
+  }
+
+  .ring-two {
+    width: 440px;
+    height: 440px;
+  }
+
+  .water-droplet-image {
+    width: 340px;
+  }
+
+  .solution-item {
+    min-height: 130px;
+  }
+}
