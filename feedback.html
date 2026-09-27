@@ -4,7 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blue Future</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+   
   </head>
   <body>
     <header>
@@ -30,7 +39,248 @@
       </div>
     </header>
     <main>
-        
+        <section class="luxury-contact" id="contact">
+
+      <!-- Ambient background lights -->
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <!-- Water particles -->
+      <div class="water-particle particle-1"></div>
+      <div class="water-particle particle-2"></div>
+      <div class="water-particle particle-3"></div>
+      <div class="water-particle particle-4"></div>
+
+      <!-- =====================================================
+           MAIN WRAPPER
+      ====================================================== -->
+
+      <div class="contact-wrapper">
+
+        <!-- ===================================================
+             LEFT CONTENT
+        ==================================================== -->
+
+        <div class="contact-left">
+
+          <div class="number">05</div>
+
+          <div class="eyebrow">
+            Share Your Idea
+          </div>
+
+          <h2 class="contact-title">
+            Your <span>Solution.</span>
+          </h2>
+
+          <p class="description">
+            Water scarcity is a challenge we solve together.
+            Whether it's an idea for conservation, technology,
+            policy, or community action — we want to hear it.
+            Submit your proposed solution below.
+          </p>
+
+          <!-- =================================================
+               DETAILS
+          ================================================== -->
+
+          <div class="details">
+
+            <div class="detail">
+              <span class="detail-label">
+                Email
+              </span>
+
+              <a href="mailto:ideas@everydrop.org">
+                ideas@everydrop.org
+              </a>
+            </div>
+
+
+            <div class="detail">
+              <span class="detail-label">
+                Focus
+              </span>
+
+              <span>
+                Global Water Scarcity
+              </span>
+            </div>
+
+
+            <div class="detail">
+              <span class="detail-label">
+                Review
+              </span>
+
+              <span>
+                Every submission is read
+              </span>
+            </div>
+
+
+            <div class="detail">
+              <span class="detail-label">
+                Follow
+              </span>
+
+              <a href="#">
+                Instagram · LinkedIn
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ===================================================
+             FORM PANEL
+        ==================================================== -->
+
+        <div class="form-panel">
+
+          <div class="form-header">
+
+            <small>
+              Propose a solution
+            </small>
+
+            <h3>
+              Help us make every drop count.
+            </h3>
+
+          </div>
+
+
+          <!-- =================================================
+               FORM
+          ================================================== -->
+
+          <form id="contactForm">
+
+            <!-- NAME + EMAIL -->
+
+            <div class="form-row">
+
+              <div class="field">
+
+                <label for="name">
+                  Your Name
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  required
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="email">
+                  Your Email
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+
+              </div>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="field">
+
+              <label for="subject">
+                Solution Category
+              </label>
+
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="e.g. Conservation, Technology, Policy, Community"
+                required
+              />
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="field">
+
+              <label for="message">
+                Your Proposed Solution
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Describe your idea for addressing water scarcity..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <!-- SUBMIT BUTTON -->
+
+            <button
+              class="submit"
+              type="submit"
+            >
+
+              <span>
+                Submit Solution
+              </span>
+
+              <span class="submit-arrow">
+                →
+              </span>
+
+            </button>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+              class="success"
+              id="success"
+            >
+              Thank you. Your solution has been received.
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           BOTTOM MARK
+      ====================================================== -->
+
+      <div class="bottom-mark">
+        Propose · Protect · Every Drop
+      </div>
+
+    </section>
     </main>
 
      <footer>
@@ -72,6 +322,6 @@
     </footer>
 
 
-    <script src="script.js"></script>
+    <script src="feedback.js"></script>
   </body>
 </html>
