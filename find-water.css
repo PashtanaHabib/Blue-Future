@@ -1,0 +1,1360 @@
+/* root */
+:root {
+  --dark-bg: #080E15;
+  --deep-navy: #0A1D2E;
+  --dark-blue: #0C2C3F;
+  --petrol-blue: #173D50;
+  --primary-blue: #207DA9;
+  --light-blue: #2694C3;
+  --cyan-blue: #36AED5;
+  --blue-gray: #84A1AF;
+  --very-light-blue: #9FD0E7;
+  --lightest-blue: #CBE6EE;
+}
+
+/* =====================================
+   PAGE LAYOUT
+===================================== */
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 35px;
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+}
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+
+header img{
+    width: 40px;
+    height: 45px;
+}
+.melting-text-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo {
+    /* font-family: Fisherman; */
+}
+
+.melting-text {
+    position: relative;
+
+    margin: 0;
+/* 
+    font-family: Fisherman; */
+    font-size: 2rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        90deg,
+        #61b8ff,
+        #1a3ea1,
+        #4c81e2
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation: melt 3s ease-in-out infinite;
+}
+
+
+/* =====================================
+   MELTING EFFECT
+===================================== */
+
+.melting-text::before,
+.melting-text::after {
+    content: "BLUE FUTURE";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #4c81e2,
+        #464f9e,
+        #4b7ae0
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    pointer-events: none;
+
+    transform-origin: top center;
+
+    z-index: -1;
+
+    animation: drip 3s ease-in-out infinite;
+}
+
+
+/* =====================================
+   BLUR EFFECT
+===================================== */
+
+.melting-text::after {
+    filter: blur(6px);
+    opacity: 0.25;
+    z-index: -2;
+}
+
+
+/* =====================================
+   MELT ANIMATION
+===================================== */
+
+@keyframes melt {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+
+/* =====================================
+   DRIP ANIMATION
+===================================== */
+
+@keyframes drip {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scaleY(1.15);
+        opacity: 0.7;
+    }
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    padding: 10px 15px;
+
+    border: 1px solid #ffffff75;
+    border-radius: 50px;
+
+    background: #ffffff67;
+
+    box-shadow: 5px 5px 12px #c4d6f035;
+
+    backdrop-filter: blur(4px);
+/* 
+    font-family: Fisherman; */
+}
+
+nav a {
+    color: var(--dark-blue);
+
+    text-decoration: none;
+
+    margin: 0 15px;
+
+    font-size: 18px;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #bdefff;
+}
+
+.nav-link {
+    position: relative;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #0878b8;
+}
+
+.nav-link.active {
+    color: #0878b8;
+}
+
+/* خط زیر لینک فعال */
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #0878b8;
+    border-radius: 10px;
+}
+
+
+/* =====================================
+   HEADER TITLE
+===================================== */
+
+.header-text {
+    /* font-family: Fisherman; */
+    font-size: 12px;
+}
+
+.header-text h1 {
+    margin: 0;
+}
+
+/* =====================================
+   THEME BUTTON
+===================================== */
+
+.theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+
+    /* font-family: Fisherman; */
+    font-size: 15px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+
+    transition: 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+#theme-icon {
+    font-size: 17px;
+}
+
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+    margin: 0;
+    background-color: #444c63;
+}
+
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    position: relative;
+    z-index: 2;
+
+    padding: 50px 6vw 25px;
+    margin-top: 20px;
+
+    background: #eaf4ff;
+
+    border-top: 1px solid #c9dff5;
+}
+
+
+/* =====================================
+   FOOTER IMAGE
+===================================== */
+
+footer img {
+    width: 40px;
+    height: 45px;
+    object-fit: contain;
+}
+
+
+/* =====================================
+   FOOTER GRID
+===================================== */
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 36px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================
+   FOOTER TITLES
+===================================== */
+
+.footer-col h4 {
+    margin-bottom: 14px;
+
+    font-size: 1rem;
+
+    color: #123b68;
+}
+
+
+/* =====================================
+   FOOTER TEXT
+===================================== */
+
+.footer-col p {
+    color: #54708c;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   FOOTER LIST
+===================================== */
+
+.footer-col ul {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+
+/* =====================================
+   FOOTER LIST ITEMS
+===================================== */
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+
+/* =====================================
+   FOOTER LINKS
+===================================== */
+
+.footer-col ul li a {
+    display: inline-block;
+
+    color: #2c6fae;
+
+    font-size: 0.9rem;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =====================================
+   LINK HOVER
+===================================== */
+
+.footer-col ul li a:hover {
+    color: #0b4f91;
+
+    transform: translateX(5px);
+}
+
+
+/* =====================================
+   FOOTER BOTTOM
+===================================== */
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    max-width: 1100px;
+
+    margin: 36px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #c9dff5;
+
+    color: #71879b;
+
+    font-size: 0.82rem;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 720px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .footer-col ul li a:hover {
+        transform: translateY(-2px);
+    }
+}
+
+
+/* =====================================
+   FIND WATER
+===================================== */
+
+/* =====================================
+   FIND WATER PAGE
+===================================== */
+
+.find-bg {
+    min-height: 100vh;
+
+    background-image: url(images/bg-find.gif);
+
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+.find-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 35px 60px;
+    box-sizing: border-box;
+}
+
+.find-content .earth-area {
+    width: 66.666%;
+    box-sizing: border-box;
+}
+
+.find-content > .col-lg-4 {
+    width: 33.333%;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   EARTH AREA
+===================================== */
+
+.earth-area {
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 40px;
+    box-sizing: border-box;
+}
+
+.find-content > .col-lg-4 {
+    width: 33.333%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   TITLE
+===================================== */
+
+.find-title {
+    max-width: 430px;
+
+    font-family: Fisherman;
+
+    color: white;
+}
+
+.find-title span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #91ddff;
+}
+
+.find-title h1 {
+    margin: 0;
+
+    font-size: 55px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+.find-title p {
+    margin-top: 15px;
+
+    max-width: 390px;
+
+    color: #d5e3ee;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   INFORMATION BOX
+===================================== */
+
+.water-info {
+    max-width: 370px;
+
+    padding-left: 20px;
+
+    border-left: 2px solid #62d5ff;
+
+    color: white;
+
+    backdrop-filter: blur(4px);
+}
+
+.water-info > span {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #70d8ff;
+}
+
+.water-info h2 {
+    margin: 7px 0;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+.water-info p {
+    margin: 0;
+
+    color: #d0dce5;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   RIGHT PANEL
+===================================== */
+
+.water-panel {
+    width: 100%;
+
+    max-width: 390px;
+
+    margin-left: auto;
+
+    padding: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 24px;
+
+    background: rgba(24, 34, 57, 0.48);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.2);
+
+}
+
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.water-search {
+
+    width: 100%;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    overflow: hidden;
+}
+
+.water-search input {
+
+    flex: 1;
+
+    height: 100%;
+
+    padding: 0 18px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+.water-search input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.water-search button {
+
+    width: 50px;
+
+    height: 100%;
+
+    border: none;
+
+    background: rgba(80, 190, 240, 0.2);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.water-search button:hover {
+
+    background: rgba(80, 190, 240, 0.4);
+
+}
+
+
+/* =====================================
+   WATER OPTIONS
+===================================== */
+
+.water-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =====================================
+   OPTION
+===================================== */
+
+.water-option {
+
+    width: 100%;
+
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 15px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* NUMBER */
+
+.option-number {
+
+    min-width: 30px;
+
+    color: #72d9ff;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* TEXT */
+
+.water-option h3 {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    font-weight: 500;
+}
+
+.water-option p {
+
+    margin: 5px 0 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 11px;
+}
+
+
+/* =====================================
+   HOVER
+===================================== */
+
+.water-option:hover {
+
+    transform: translateX(-8px);
+
+    background: rgba(80, 190, 240, 0.15);
+
+    border-color: rgba(100, 210, 255, 0.5);
+
+    box-shadow:
+        0 5px 25px rgba(50, 180, 240, 0.12);
+}
+
+
+/* =====================================
+   ACTIVE
+===================================== */
+
+.water-option.active {
+
+    background: rgba(70, 180, 235, 0.2);
+
+    border-color: rgba(110, 220, 255, 0.6);
+
+    box-shadow:
+        inset 3px 0 0 #63d7ff,
+        0 5px 25px rgba(50, 180, 240, 0.12);
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 991px) {
+
+    .find-bg {
+
+        background-size: auto 100%;
+
+        background-position: center top;
+
+    }
+
+
+    .find-content {
+
+        padding: 80px 20px 40px;
+
+    }
+
+
+    .earth-area {
+
+        min-height: 550px;
+
+        padding: 50px 20px;
+
+        justify-content: space-between;
+
+    }
+
+
+    .find-title h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .water-panel {
+
+        max-width: 500px;
+
+        margin: 0 auto;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .find-content {
+
+        padding: 50px 15px 30px;
+
+    }
+
+
+    .earth-area {
+
+        min-height: 500px;
+
+        padding: 30px 10px;
+
+    }
+
+
+    .find-title h1 {
+
+        font-size: 36px;
+
+    }
+
+
+    .water-panel {
+
+        padding: 18px;
+
+        border-radius: 18px;
+
+    }
+
+}
+
+/* =====================================
+   DARK MODE
+===================================== */
+
+html.darkmode body {
+    background-color: #080E15;
+}
+
+/* RIGHT PANEL */
+html.darkmode .water-panel {
+    background: rgba(8, 14, 21, 0.82);
+    border-color: rgba(54, 174, 213, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* SEARCH */
+html.darkmode .water-search {
+    background: rgba(10, 29, 46, 0.85);
+    border-color: rgba(54, 174, 213, 0.3);
+}
+
+html.darkmode .water-search input {
+    color: #CBE6EE;
+}
+
+html.darkmode .water-search input::placeholder {
+    color: #84A1AF;
+}
+
+html.darkmode .water-search button {
+    background: rgba(32, 125, 169, 0.35);
+    color: #CBE6EE;
+}
+
+html.darkmode .water-search button:hover {
+    background: rgba(38, 148, 195, 0.55);
+}
+
+/* WATER OPTIONS */
+html.darkmode .water-option {
+    background: rgba(10, 29, 46, 0.75);
+    border-color: rgba(132, 161, 175, 0.2);
+    color: #CBE6EE;
+}
+
+html.darkmode .water-option:hover {
+    background: rgba(23, 61, 80, 0.9);
+    border-color: rgba(54, 174, 213, 0.55);
+    box-shadow: 0 5px 25px rgba(32, 125, 169, 0.2);
+}
+
+html.darkmode .water-option.active {
+    background: rgba(23, 61, 80, 0.95);
+    border-color: rgba(54, 174, 213, 0.65);
+    box-shadow:
+        inset 3px 0 0 #36AED5,
+        0 5px 25px rgba(32, 125, 169, 0.2);
+}
+
+/* OPTION TEXT */
+html.darkmode .water-option h3 {
+    color: #CBE6EE;
+}
+
+html.darkmode .water-option p {
+    color: #84A1AF;
+}
+
+html.darkmode .option-number {
+    color: #36AED5;
+}
+
+/* LEFT INFORMATION */
+html.darkmode .water-info {
+    color: #CBE6EE;
+    border-left-color: #36AED5;
+}
+
+html.darkmode .water-info > span {
+    color: #36AED5;
+}
+
+html.darkmode .water-info h2 {
+    color: #9FD0E7;
+}
+
+html.darkmode .water-info p {
+    color: #84A1AF;
+}
+
+/* TITLE */
+html.darkmode .find-title {
+    color: #CBE6EE;
+}
+
+html.darkmode .find-title span {
+    color: #36AED5;
+}
+
+html.darkmode .find-title p {
+    color: #9FD0E7;
+}
+
+/* THEME BUTTON */
+html.darkmode .theme-btn {
+    background: rgba(10, 29, 46, 0.8);
+    border-color: rgba(54, 174, 213, 0.35);
+    color: #CBE6EE;
+}
+
+/* FOOTER */
+html.darkmode footer {
+    background: #080E15;
+    border-top-color: #173D50;
+}
+
+html.darkmode .footer-col h4 {
+    color: #9FD0E7;
+}
+
+html.darkmode .footer-col p {
+    color: #84A1AF;
+}
+
+html.darkmode .footer-col ul li a {
+    color: #2694C3;
+}
+
+html.darkmode .footer-col ul li a:hover {
+    color: #36AED5;
+}
+
+html.darkmode .footer-bottom {
+    border-top-color: #173D50;
+    color: #84A1AF;
+}
+
+html.darkmode .water-panel::before {
+    background: #36AED5;
+    opacity: 0.16;
+}
+
+html.darkmode .water-info {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 29, 46, 0.8),
+            rgba(10, 29, 46, 0.35),
+            transparent
+        );
+
+    box-shadow:
+        -10px 0 35px rgba(54, 174, 213, 0.12);
+}
+
+html.darkmode .water-info:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(23, 61, 80, 0.9),
+            rgba(10, 29, 46, 0.4),
+            transparent
+        );
+
+    box-shadow:
+        -12px 0 45px rgba(54, 174, 213, 0.2);
+}
+
+/* =====================================
+   DARK MODE - NAVBAR
+===================================== */
+
+html.darkmode nav {
+    background: rgba(8, 14, 21, 0.78);
+    border-color: rgba(54, 174, 213, 0.35);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(32, 125, 169, 0.08);
+}
+
+html.darkmode nav a {
+    color: #9FD0E7;
+}
+
+html.darkmode nav a:hover {
+    color: #36AED5;
+    text-shadow: 0 0 10px rgba(54, 174, 213, 0.5);
+}
+
+html.darkmode .theme-btn {
+    background: rgba(23, 61, 80, 0.65);
+    border-color: rgba(54, 174, 213, 0.45);
+    color: #CBE6EE;
+    box-shadow: 0 0 15px rgba(54, 174, 213, 0.08);
+}
+
+html.darkmode .theme-btn:hover {
+    background: rgba(32, 125, 169, 0.4);
+    border-color: rgba(54, 174, 213, 0.7);
+    box-shadow: 0 0 20px rgba(54, 174, 213, 0.2);
+}
+
+
+
+/* =====================================
+   CREATIVE LIGHT MODE
+===================================== */
+
+/* LEFT INFO */
+.water-info {
+    position: relative;
+    padding: 22px 25px;
+    border-left: 2px solid #2694C3;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(203, 230, 238, 0.65),
+            rgba(203, 230, 238, 0.18),
+            transparent
+        );
+
+    border-radius: 0 20px 20px 0;
+
+    box-shadow:
+        -8px 0 25px rgba(32, 125, 169, 0.08);
+
+    transition: 
+        transform 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* little glowing line */
+.water-info::before {
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: 15%;
+    width: 4px;
+    height: 70%;
+    border-radius: 10px;
+    background: #36AED5;
+    box-shadow: 0 0 15px rgba(54, 174, 213, 0.5);
+}
+
+/* hover */
+.water-info:hover {
+    transform: translateX(8px);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(159, 208, 231, 0.75),
+            rgba(203, 230, 238, 0.3),
+            transparent
+        );
+
+    box-shadow:
+        -12px 0 35px rgba(32, 125, 169, 0.15);
+}
+
+.find-title h1 {
+    position: relative;
+    display: inline-block;
+}
+
+.find-title h1::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    bottom: -8px;
+    width: 55%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #36AED5,
+        #9FD0E7,
+        transparent
+    );
+
+    box-shadow: 0 0 10px rgba(54, 174, 213, 0.35);
+}
+.water-option {
+    position: relative;
+    overflow: hidden;
+}
+
+.water-option::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.12),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+
+.water-option:hover::before {
+    left: 130%;
+}
+
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    nav {
+        padding: 7px 10px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 15px;
+    }
+
+    .theme-btn {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 12px 15px;
+    }
+
+    header img {
+        width: 80px;
+    }
+
+    nav {
+        width: auto;
+        max-width: 100%;
+        padding: 8px 10px;
+        gap: 3px;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 30px;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    .theme-btn {
+        padding: 6px 9px;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 10px;
+    }
+
+    header img {
+        width: 65px;
+    }
+
+    nav {
+        padding: 6px 8px;
+    }
+
+    nav a {
+        margin: 0 4px;
+        font-size: 11px;
+    }
+
+    .theme-btn {
+        padding: 5px 7px;
+        font-size: 10px;
+    }
+}
