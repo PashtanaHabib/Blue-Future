@@ -1,0 +1,34 @@
+
+ :root {
+      --deep-ocean: #063B63;
+      --ocean-blue: #087EA4;
+      --cyan: #38C8E8;
+      --light-cyan: #9BE7F5;
+      --white: #FFFFFF;
+      --dark-navy: #062B49;
+      --glass: rgba(255,255,255,0.12);
+      --glass-border: rgba(255,255,255,0.22);
+      --glass-hover: rgba(255,255,255,0.18);
+      --t-fast: 0.15s;      
+      --t-hover: 0.22s;    
+      --t-modal: 0.3s;      
+      --t-chart: 0.45s;     
+      --t-highlight: 0.55s;
+ }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+       body {
+      font-family: 'Inter', sans-serif;
+      background-color: #062B49;
+      color: var(--white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+   
+    
